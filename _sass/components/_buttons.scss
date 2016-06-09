@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+// Base button
+.c-btn {
+  border: 0;
+  outline: 0;
+  padding: 1.5rem 2rem;
+  @include fs--meta;
+  text-decoration: none;
+  background: #fafafa;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  height: 45px;
+  line-height: 45px;
+  min-width: 140px;
+  padding: 0 30px;
+  display: inline-block;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  &--primary {
+    background: $primary;
+    color: #fff;
+  }
+  &--shield {
+    background-image: url('../img/btn-shield.png');
+    background-repeat: no-repeat;
+    background-position: 20px 11px;
+    background-size: 22px 22px;
+    padding: 0 30px 0 55px;
+  }
+  &--kendoka {
+    background: $secondary;
+    background-image: url('../img/kendoka/2.svg');
+    background-repeat: no-repeat;
+    background-position: 20px 11px;
+    background-size: 22px 22px;
+    padding: 0 30px 0 55px;
+  }
+  &--bottom {
+    cursor: pointer;
+    text-align: left;
+    border-radius: 0;
+    width: 100%;
+    padding: 5px 15px;
+    background: #35383c;
+    color: #fff;
+    line-height: 34px;
+    position: relative;
+    &:after {
+      content: '\E8E4';
+      font-family: 'Material Icons';
+      position: absolute;
+      top: 5px;
+      right: 15px;
+    }
+    i {
+      text-align: right;
+    }
+  }
+}
+
+// Button groups
+.c-btn-group {
+  display: flex;
+  justify-content: space-between;
+}

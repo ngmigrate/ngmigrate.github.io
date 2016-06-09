@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.u-container {
+  max-width: 116rem; // 1160px
+  margin-right: auto;
+  margin-left: auto;
+}
+
+%heading {
+  font-weight: bold;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1, .alpha {
+  font-family: 'BrandonGrotesque', sans-serif;
+  font-size: 32px;
+  margin: 0;
+  @extend %heading;
+}
+
+h2, .beta {
+  font-family: 'BrandonGrotesque', sans-serif;
+  margin: 0;
+  font-size: 20px;
+  @extend %heading;
+}
+
+h3, .gamma {
+  font-family: 'BrandonGrotesque', sans-serif;
+  margin: 0;
+  font-size: 18px;
+  @extend %heading;
+}
+
+h4, .delta {
+  font-family: 'BrandonGrotesque', sans-serif;
+  margin: 0;
+  font-size: 16px;
+  @extend %heading;
+}
+
+h5, .epsilon {
+  font-family: 'BrandonGrotesque', sans-serif;
+  margin: 0;
+  font-size: 14px;
+  @extend %heading;
+}
+
+h6, .zeta {
+  font-family: 'BrandonGrotesque', sans-serif;
+  margin: 0;
+  font-size: 12px;
+  @extend %heading;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
+
+@font-face {
+  font-family: 'BrandonGrotesque';
+  src: url('../fonts/brandon_reg-webfont.eot');
+  src: url('../fonts/brandon_reg-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/brandon_reg-webfont.woff2') format('woff2'),
+       url('../fonts/brandon_reg-webfont.woff') format('woff'),
+       url('../fonts/brandon_reg-webfont.ttf')  format('truetype'),
+       url('../fonts/brandon_reg-webfont.svg#svgFontName') format('svg');
+}
+
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(../fonts/MaterialIcons-Regular.woff2) format('woff2'),
+       url(../fonts/MaterialIcons-Regular.woff) format('woff'),
+       url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}

@@ -1,0 +1,11 @@
+<!doctype html>
+<html class="t-{{ site.theme }}">
+  {% include head.html %}
+  <body class="{% if page.url == '/' %}index{% endif %}">
+    {% include navigation.html %}
+    <div>
+      {{ content }}
+    </div>
+    {% include footer.html %}
+  </body>
+</html>

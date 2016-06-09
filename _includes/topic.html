@@ -1,0 +1,33 @@
+{% include title.html %}
+<section class="c-topics">
+  {% include topics.html url=page.url %}
+  <div class="c-topics__list">
+    <ul>
+    {% for post in site.posts %}
+      {% if post.tags contains {{include.tag}} %}
+        <li>
+          <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">
+            <h2>
+              {{ post.title }}
+            </h2>
+            <div class="c-topics__meta">
+              <span class="c-topics__meta-publish">
+                <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+                  <i class="material-icons">&#xE916;</i> {{ post.date | date: "%b %-d, %Y" }}
+                </time>
+              </span>
+              <span class="c-topics__meta-author">
+                <i class="material-icons">&#xE853;</i> {{ post.author }}
+              </span>
+            </div>
+            <!-- <p>
+              {{ post.content | truncatewords: 20 }}
+            </p> -->
+            <span class="c-topics__go"></span>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </div>
+</section>

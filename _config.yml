@@ -1,0 +1,21 @@
+# Site settings
+title: ngMigrate
+email: todd@toddmotto.com
+description: >
+  ngMigrate is a project to migrate your existing Angular 1 knowledge into Angular 2.
+baseurl: ""
+url: "https://ng-migrate.github.io"
+fixedNav: 'true' # true or false
+theme: green # green, blue, orange, purple, grey
+twitterUsername: toddmotto
+githubUsername: toddmotto
+dribbbleUsername:
+codepenUsername:
+
+# Build settings
+permalink: /:title
+markdown: kramdown
+include: [_pages]
+exclude: [_site, CHANGELOG.md, LICENSE, README.md]
+sass:
+  style: compressed

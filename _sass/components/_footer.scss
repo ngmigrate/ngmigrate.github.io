@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.c-footer {
+  background: #35383c;
+  color: #fff;
+  &__signup {
+    > p {
+      font-size: 12px;
+    }
+    form {
+      margin: 10px 0 0;
+      input[type=email] {
+        outline: 0;
+        float: left;
+        border: 0;
+        height: 34px;
+        border-radius: 3px 0 0 3px;
+        padding: 8px 14px;
+      }
+      button {
+        outline: 0;
+        background: $primary;
+        color: #fff;
+        float: left;
+        position: relative;
+        border: 0;
+        height: 34px;
+        border-radius: 0 3px 3px 0;
+        padding: 0 14px 0 35px;
+        line-height: 34px;
+        i {
+          position: absolute;
+          top: 8px;
+          left: 10px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  &__logo {
+    margin: 0 0 15px;
+    img {
+      margin: 0;
+      width: 125px;
+      height: 50px;
+      background: url('../img/progress.png') no-repeat 0 0;
+      .svg & {
+        background: url('../img/progress.svg') no-repeat 0 0;
+        background-size: 125px 50px;
+      }
+    }
+    .svg & {
+
+    }
+  }
+  &__main {
+    padding: 25px 0;
+    > ul {
+      list-style: none;
+      > li {
+        float: left;
+        width: 33.33%;
+        h3 {
+          font-size: 24px;
+          font-weight: 400;
+          margin: 0 0 20px;
+        }
+        ul {
+          list-style: none;
+          li {
+            position: relative;
+            padding: 3px 5px 3px 20px;
+            &:before {
+              position: absolute;
+              top: 4px;
+              left: 0;
+              content: '\E315';
+              font-family: 'Material Icons';
+              color: $primary;
+            }
+            a {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__lower {
+    text-align: center;
+    padding: 35px 0;
+    background: $secondary;
+    p {
+      margin: 0;
+      font-size: 12px;
+    }
+  }
+}

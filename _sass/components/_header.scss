@@ -1,0 +1,395 @@
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.wrapper {
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 96%;
+  &--medium {
+    max-width: 800px;
+  }
+}
+.c-header {
+  padding: 5rem 2.5rem;
+  background: lighten($secondary, 2%) url('../img/kendoka/2.svg') no-repeat 100% 0;
+}
+.c-hero {
+  text-align: center;
+  background: $secondary;
+  padding: 70px 0 0;
+  .index & {
+    padding: 10rem 0 0;
+    background: $secondary url("../img/kendoka/1.svg") no-repeat 0px 100%;
+    background-size: 150px 150px;
+  }
+}
+.c-intro {
+  text-align: right;
+  color: #fff;
+  float: left;
+  width: 50%;
+  padding: 25px 25px 0 0;
+  h1 {
+    margin: 25px 0 20px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+  }
+  p {
+    margin: 5px 0;
+  }
+  a.c-btn {
+    margin-top: 15px;
+  }
+}
+.c-editor {
+  width: 50%;
+  float: right;
+}
+.c-logo {
+  margin: 25px 0;
+  img {
+    margin: 0;
+    width: 260px;
+    height: 80px;
+    background: url('../img/logo.png') no-repeat 0 0;
+    .svg & {
+      background: url('../img/logo.svg') no-repeat 0 0;
+      background-size: 260px 80px;
+    }
+  }
+  a {
+    display: inline-block;
+    margin: 0;
+  }
+}
+.c-header__title {
+  text-align: center;
+  position: relative;
+  font-family: 'BrandonGrotesque', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: $c__white;
+  &:after {
+    margin-left: .5rem;
+    color: rgba($primary, 1);
+    content: '¬';
+  }
+  span {
+    color: rgba(#fff, .5);
+  }
+}
+
+pre.editor {
+  text-align: left;
+    position: relative;
+    color: #ddd;
+    background: #1d1f21;
+    padding: 0;
+    border-radius: 4px 4px 0 0;
+    margin-top: 2.6em;
+    font-family: Menlo,Menlo-Regular,Inconsolata,Monaco,monospace;
+    font-size: 13px;
+    line-height: 1.2em
+}
+
+pre.editor:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -1.6em;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0 0 25px 0 #aaa
+}
+
+pre.editor:before {
+    display: block;
+    position: absolute;
+    text-align: center;
+    color: #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #ccc;
+    background-image: -webkit-linear-gradient(top,#ddd,#aaa);
+    background-image: -moz-linear-gradient(top,#ddd,#aaa);
+    line-height: 1.8em;
+    height: 1.8em;
+    top: -1.8em;
+    left: -1px;
+    right: -1px;
+    font-family: Lucida Grande,sans-serif;
+    font-size: 12px;
+    color: #3a3a53;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+    border: 1px solid rgba(110,110,110,0.3)
+}
+
+pre.editor {
+  .line {
+    display: inline-block;
+    text-align: right;
+    padding: 0 10px;
+    margin: 0 15px 0 0;
+    background: #35383c;
+    width: 50px;
+    color: #848888;
+    &.active {
+      border-left: 2px solid #e9c062;
+      background: #46494c;
+      color: #babdbb;
+    }
+  }
+  .blue {
+    color: #96cbfe;
+  }
+  .green {
+    color: #a6fc5e;
+  }
+  .yellow {
+    color: #cfcb90;
+  }
+  .orange {
+    color: #ffd2a7;
+  }
+}
+
+.active-prompt {
+    -webkit-animation-name: blink;
+    -webkit-animation-direction: normal;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease;
+    animation-name: blink;
+    animation-direction: normal;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease
+}
+
+.active-prompt:after {
+    content: '|';
+    color: #FFF
+}
+
+@keyframes 'blink' {
+  0% {opacity: 1.0}
+  50% {opacity: .0}
+  100% {opacity: 1.0}
+}
+
+@-webkit-keyframes 'blink' {
+  0% {opacity: 1.0}
+  50% {opacity: .0}
+  100% {opacity: 1.0}
+}
+
+.c-tags {
+  margin: 70px 0;
+  &__title {
+    text-align: center;
+    margin: 0 0 35px;
+    h1 {
+      margin: 0 0 10px;
+      font-size: 26px;
+    }
+  }
+  &__list {
+    ul {
+      list-style: none;
+      overflow: hidden;
+    }
+    li {
+      float: left;
+      width: 32%;
+      margin: 0 10px 10px 0;
+      &:last-child {
+        margin: 0;
+      }
+      a {
+        overflow: hidden;
+        border-radius: 3px;
+        background: $secondary;
+        display: block;
+        color: #fff;
+      }
+      div {
+
+      }
+      p {
+        padding: 25px 15px;
+        font-size: 14px;
+      }
+      h3 {
+        font-size: 20px;
+        font-weight: 400;
+        background: $primary url('../img/btn-shield.png') no-repeat 15px 11px;
+        background-size: 22px 22px;
+        padding: 10px 10px 10px 50px;
+      }
+    }
+  }
+}
+
+.author {
+  position: relative;
+  background: #f0f0f0;
+  &__img {
+    position: absolute;
+    top: 25px;
+    max-width: 80px;
+    img {
+      border-radius: 50%;
+    }
+  }
+  &__content {
+    padding: 35px 15px 35px 105px;
+    h1 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+  }
+}
+
+.c-topics {
+  display: table;
+  background: $secondary;
+  &__meta {
+    text-transform: uppercase;
+    font-size: 10px;
+    &-publish {
+      // color: #f76a28;
+      // background: #33363a;
+      // padding: 4px 4px 4px 15px;
+      // border-radius: 0 3px 3px 0;
+      // i {
+      //   display: inline-block;
+      //   margin: 2px 0 0;
+      //   font-size: 16px;
+      // }
+    }
+    &-author {
+
+    }
+  }
+  &__links {
+    min-width: 300px;
+    display: table-cell;
+    vertical-align: top;
+    h1 {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 400;
+      background: $primary url("../img/btn-shield.png") no-repeat 15px 11px;
+      background-size: 22px 22px;
+      padding: 10px 10px 10px 50px;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        border-bottom: 1px solid darken($secondary, 2%);
+        &:last-child {
+          border-bottom: 0;
+        }
+        a {
+          position: relative;
+          background: transparent;
+          color: #fff;
+          display: block;
+          padding: 15px 20px;
+          transition: all 0.2s ease-in-out;
+          transition-property: background-color, color;
+          &.is-active,
+          &:hover {
+            color: $primary;
+            background: lighten($secondary, 4%);
+            &:after {
+              color: $primary;
+            }
+          }
+          &.is-active {
+            background: lighten($secondary, 4%);
+            background-image: url('../img/kendoka/2.svg');
+            background-repeat: no-repeat;
+            background-position: 80% 0;
+            background-size: 50px 50px;
+            &:hover {
+              background: lighten($secondary, 4%);
+              background-image: url('../img/kendoka/2.svg');
+              background-repeat: no-repeat;
+              background-position: 80% 0;
+              background-size: 50px 50px;
+            }
+          }
+          &:after {
+            transition: color 0.2s ease-in-out;
+            color: #777;
+            content: '\E8E4';
+            font-family: 'Material Icons';
+            position: absolute;
+            top: 17px;
+            right: 15px;
+          }
+        }
+      }
+    }
+  }
+  &__go {
+    background: $primary;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 25px;
+    transition: background 0.2s ease-in-out;
+    &:after {
+      font-family: 'Material Icons';
+      font-size: 30px;
+      transition: color 0.2s ease-in-out;
+      color: #fff;
+      content: '\E315';
+      position: absolute;
+      top: 48%;
+      right: 5px;
+    }
+  }
+  &__list {
+    display: table-cell;
+    vertical-align: top;
+    width: 100%;
+    background: #fff;
+    padding: 0;
+    ul {
+      list-style: none;
+      margin: 0;
+      li {
+        position: relative;
+        &:nth-child(odd) {
+          a {
+            background: #f9f9f9;
+          }
+        }
+        a {
+          color: $secondary;
+          background: #fff;
+          display: block;
+          padding: 25px;
+          transition: color 0.2s ease-in-out;
+          &:hover {
+            color: $primary;
+          }
+        }
+        h2 {
+
+        }
+      }
+    }
+  }
+}

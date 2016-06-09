@@ -1,0 +1,15 @@
+<aside class="c-topics__links">
+  <h1>
+    Migration topics
+  </h1>
+  <ul class="tags">
+  {% for tag in site.tags %}
+    {% assign t = tag | first %}
+    {% assign r = include.url | replace:'/topics/','' %}
+    <li>
+      <a href="/topics/{{ t | lowercase }}" class="{% if r == t %}is-active{% endif %}">
+        {{ t | capitalize }}
+      </a>
+    </li>
+  {% endfor %}
+</aside>
