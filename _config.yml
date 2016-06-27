@@ -9,9 +9,8 @@ fixedNav: 'true' # true or false
 theme: green # green, blue, orange, purple, grey
 twitterUsername: toddmotto
 githubUsername: toddmotto
-dribbbleUsername:
-codepenUsername:
-
+paginate: 2
+gems: [jekyll-paginate]
 # Build settings
 permalink: /:title
 markdown: kramdown

@@ -1,0 +1,38 @@
+<div class="single__author single__author--{{ include.position }}">
+  <div class="single__author-img">
+    <img src="{{ author.gravatar }}" alt="">
+  </div>
+  <div class="single__author-desc">
+    <h3 class="single__author-name">
+      Author: {{ author.name }}
+    </h3>
+    <p>
+      {{ author.bio }}
+    </p>
+    <div class="single__author-links">
+      <ul class="cf">
+        {% if author.twitter %}
+        <li>
+          <a href="https://twitter.com/{{ author.twitter }}">
+            <img src="{{ site.baseurl }}/img/icons/twitter.svg" alt="">
+          </a>
+        </li>
+        {% endif %}
+        {% if author.github %}
+        <li>
+          <a href="https://github.com/{{ author.github }}">
+            <img src="{{ site.baseurl }}/img/icons/github.svg" alt="">
+          </a>
+        </li>
+        {% endif %}
+        {% if author.web %}
+        <li>
+          <a href="{{ author.web }}">
+            <i class="material-icons">&#xE87A;</i>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>

@@ -11,47 +11,46 @@
 %heading {
   font-weight: bold;
   position: relative;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 h1, .alpha {
-  font-family: 'BrandonGrotesque', sans-serif;
+  font-family: 'Museo Slab', 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 32px;
   margin: 0;
   @extend %heading;
 }
 
 h2, .beta {
-  font-family: 'BrandonGrotesque', sans-serif;
+  font-family: 'Museo Slab', 'Helvetica Neue', Helvetica, sans-serif;
   margin: 0;
   font-size: 20px;
   @extend %heading;
 }
 
 h3, .gamma {
-  font-family: 'BrandonGrotesque', sans-serif;
+  font-family: 'Museo Slab', 'Helvetica Neue', Helvetica, sans-serif;
   margin: 0;
   font-size: 18px;
   @extend %heading;
 }
 
 h4, .delta {
-  font-family: 'BrandonGrotesque', sans-serif;
+  font-family: 'Museo Slab', 'Helvetica Neue', Helvetica, sans-serif;
   margin: 0;
   font-size: 16px;
   @extend %heading;
 }
 
 h5, .epsilon {
-  font-family: 'BrandonGrotesque', sans-serif;
+  font-family: 'Museo Slab', 'Helvetica Neue', Helvetica, sans-serif;
   margin: 0;
   font-size: 14px;
   @extend %heading;
 }
 
 h6, .zeta {
-  font-family: 'BrandonGrotesque', sans-serif;
+  font-family: 'Museo Slab', 'Helvetica Neue', Helvetica, sans-serif;
   margin: 0;
   font-size: 12px;
   @extend %heading;
@@ -84,18 +83,18 @@ h6, .zeta {
     *zoom: 1;
 }
 
-
-
 @font-face {
-  font-family: 'BrandonGrotesque';
-  src: url('../fonts/brandon_reg-webfont.eot');
-  src: url('../fonts/brandon_reg-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/brandon_reg-webfont.woff2') format('woff2'),
-       url('../fonts/brandon_reg-webfont.woff') format('woff'),
-       url('../fonts/brandon_reg-webfont.ttf')  format('truetype'),
-       url('../fonts/brandon_reg-webfont.svg#svgFontName') format('svg');
-}
+    font-family: 'Museo Slab';
+    src: url('../fonts/Museo_Slab_500_2-webfont.eot');
+    src: url('../fonts/Museo_Slab_500_2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Museo_Slab_500_2-webfont.woff2') format('woff2'),
+         url('../fonts/Museo_Slab_500_2-webfont.woff') format('woff'),
+         url('../fonts/Museo_Slab_500_2-webfont.ttf') format('truetype'),
+         url('../fonts/Museo_Slab_500_2-webfont.svg#museo_slab500') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
 @font-face {
   font-family: 'Material Icons';

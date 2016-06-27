@@ -2,28 +2,35 @@
 <section class="c-topics">
   {% include topics.html url=page.url %}
   <div class="c-topics__list">
-    <ul>
+    <ul class="c-topics__list-none" style="display: none;">
+      <li>
+        No posts here just yet, sign up to get notified of new articles.
+      </li>
+    </ul>
+    <ul class="c-topics__list-items">
     {% for post in site.posts %}
       {% if post.tags contains {{include.tag}} %}
+      {% assign author = site.data.authors[post.author] %}
         <li>
           <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">
             <h2>
               {{ post.title }}
             </h2>
+            <div class="c-topics__preview">
+              {{ post.content | strip_html | truncatewords: 50 }}
+            </div>
             <div class="c-topics__meta">
-              <span class="c-topics__meta-publish">
+              <span>
                 <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
-                  <i class="material-icons">&#xE916;</i> {{ post.date | date: "%b %-d, %Y" }}
+                  <i class="material-icons">&#xE916;</i>
+                  {{ post.date | date: "%b %-d, %Y" }}
                 </time>
               </span>
-              <span class="c-topics__meta-author">
-                <i class="material-icons">&#xE853;</i> {{ post.author }}
+              <span>
+                <i class="material-icons">&#xE7FD;</i>
+                {{ author.name }}
               </span>
             </div>
-            <!-- <p>
-              {{ post.content | truncatewords: 20 }}
-            </p> -->
-            <span class="c-topics__go"></span>
           </a>
         </li>
       {% endif %}
@@ -31,3 +38,11 @@
     </ul>
   </div>
 </section>
+<script>
+(function () {
+  var posts = document.querySelectorAll('.c-topics__list-items li');
+  if (!(posts && posts.length)) {
+    document.querySelector('.c-topics__list-none').style.display = 'inherit';
+  }
+})();
+</script>

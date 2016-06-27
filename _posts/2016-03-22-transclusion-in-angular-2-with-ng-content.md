@@ -4,7 +4,7 @@ permalink: /transclusion-in-angular-2-with-ng-content
 title: Transclusion in Angular 2
 author: Todd Motto
 path: 2016-03-22-transclusion-in-angular-2-with-ng-content.md
-tags: bootstrapping forms services routing components controllers
+tags: bootstrapping forms services routing controllers
 ---
 
 Transclusion is an Angular 1.x term, lost is the rewrite of Angular 2, so let's bring it back for this article just concept clarity. The word "transclusion" may be gone, but the concepts remain.
@@ -13,7 +13,7 @@ Essentially, transclusion in Angular 1.x is/was taking content such as a text no
 
 This is now done in Angular 2 through modern web APIs such as Shadow DOM and known as "Content Projection". Let's explore!
 
-### Angular 1.x transclusion
+## Angular 1.x transclusion
 
 For those coming from an Angular 1.x background, transclusion looks a little like this with the `.directive()` API (if you know this already please pass Go and collect £200):
 
@@ -111,7 +111,7 @@ Evaluated DOM output:
 </my-component>
 {% endhighlight %}
 
-### Angular 2 Content Projection
+## Angular 2 Content Projection
 
 So now we know what we're looking at from an Angular 1.x perspective, we can easily migrate this concept to Angular 2. However, if you've not used Angular 1.x, fear not as this concept is easily demonstrated above on how to inject content into another element or Component.
 

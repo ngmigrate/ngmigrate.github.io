@@ -32,14 +32,12 @@
   display: inline-block;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-  font-family: 'BrandonGrotesque', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: $c__white;
   text-transform: uppercase;
-
   &:not(:last-of-type) {
     margin-right: 2.5rem;
   }
-
   &:after {
     content: '';
     position: absolute;

@@ -1,15 +1,52 @@
 <aside class="c-topics__links">
   <h1>
-    Migration topics
+    Topics
   </h1>
   <ul class="tags">
-  {% for tag in site.tags %}
-    {% assign t = tag | first %}
-    {% assign r = include.url | replace:'/topics/','' %}
     <li>
-      <a href="/topics/{{ t | lowercase }}" class="{% if r == t %}is-active{% endif %}">
-        {{ t | capitalize }}
+      <a href="/topics/bootstrapping" class="{% if page.url == '/topics/bootstrapping' %}is-active{% endif %}">
+        Bootstrapping
       </a>
     </li>
-  {% endfor %}
+    <li>
+      <a href="/topics/controllers" class="{% if page.url == '/topics/controllers' %}is-active{% endif %}">
+        Controllers
+      </a>
+    </li>
+    <li>
+      <a href="/topics/modules" class="{% if page.url == '/topics/modules' %}is-active{% endif %}">
+        Modules
+      </a>
+    </li>
+    <li>
+      <a href="/topics/components" class="{% if page.url == '/topics/components' %}is-active{% endif %}">
+        Components
+      </a>
+    </li>
+    <li>
+      <a href="/topics/directives" class="{% if page.url == '/topics/directives' %}is-active{% endif %}">
+        Directives
+      </a>
+    </li>
+    <li>
+      <a href="/topics/routing" class="{% if page.url == '/topics/routing' %}is-active{% endif %}">
+        Routing
+      </a>
+    </li>
+    <li>
+      <a href="/topics/services" class="{% if page.url == '/topics/services' %}is-active{% endif %}">
+        Services
+      </a>
+    </li>
+    <li>
+      <a href="/topics/forms" class="{% if page.url == '/topics/forms' %}is-active{% endif %}">
+        Forms
+      </a>
+    </li>
+    <li>
+      <a href="/topics/filters" class="{% if page.url == '/topics/filters' %}is-active{% endif %}">
+        Filters
+      </a>
+    </li>
+  </ul>
 </aside>

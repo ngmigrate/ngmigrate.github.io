@@ -11,7 +11,9 @@
   padding: 0;
 }
 
-*, *:before, *:after { box-sizing: inherit; }
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 
 html {
@@ -24,8 +26,8 @@ html {
 }
 
 body {
-  @include ff--sans-serif(400);
-  font-size: 14px;
+  color: #444;
+  font: 400 16px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -49,7 +51,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: 'Museo Slab', 'Helvetica', 'Arial', sans-serif;
 }
 
 

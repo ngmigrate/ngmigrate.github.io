@@ -2,4 +2,52 @@
 layout: page
 ---
 
+{% assign author = site.data.authors[page.author] %}
+
+{% include author.html position="top" %}
+
+<div class="single__meta cf">
+  <div class="single__meta-info">
+    <span>
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        <i class="material-icons">&#xE916;</i>
+        {{ page.date | date: "%b %-d, %Y" }}
+      </time>
+    </span>
+    <span>
+      <i class="material-icons">&#xE7FD;</i>
+      {{ author.name }}
+    </span>
+  </div>
+  <a href="https://github.com/ngmigrate/ngmigrate.github.io/blob/master/_posts/{{page.path}}" target="_blank">
+    <i class="material-icons">&#xE254;</i>
+    Improve this page
+  </a>
+</div>
+
 {{ content }}
+
+{% include author.html position="bottom" %}
+
+<div class="single__comments">
+  <div id="disqus_thread"></div>
+</div>
+<script src="js/linkjuice.min.js"></script>
+<script>
+linkjuice.init('.single__content', {
+  icon: '<i class="material-icons">&#xE157;</i>',
+  selectors: ['h2', 'h4', 'h5', 'h3:not(.single__author-name)']
+});
+</script>
+<script>
+function disqus_config() {
+  this.page.url = 'http://ngmigrate.com{{ page.url }}';
+  this.page.identifier = '{{ page.title }}';
+}
+(function (d) {
+  var s = d.createElement('script');
+  s.src = '//ngmigrate.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})(document);
+</script>

@@ -2,7 +2,7 @@
 layout: post
 permalink: /component-events-event-emitter-output-angular-2
 title: Component events with EventEmitter and "Output" in Angular 2
-author: Todd Motto
+author: toddmotto
 path: 2016-03-19-component-events-event-emitter-output-angular-2.md
 tags: modules controllers filters
 ---
@@ -11,7 +11,7 @@ Angular 2 Components have a far better way of notifying parent Components that s
 
 This tutorial will cover local Component events using the `EventEmitter` API and `@Output` decorator, which follows nicely from the previous article on [passing data in Angular 2 Components](/passing-data-angular-2-components-input). For the purposes of this article we'll be continuing to use the Counter Component we built in the [first article](/creating-your-first-angular-2-component) - so familiarise yourself with this first.
 
-### Angular 1.x
+## Angular 1.x
 
 For those coming from an Angular 1.x background, this concept could look a little like this with the `.directive()` API and `$rootScope` events:
 
@@ -61,7 +61,7 @@ The key ingredient using `$rootScope.$emit('counterValueChange', {});` which fir
 
 Let's investigate the Angular 2 way.
 
-### Parent "Listener"
+## Parent "Listener"
 
 Let's take our parent Component we know well by now and setup a function called `myValueChange` on the `class` that we want to invoke when we bind it to our `CounterComponent`'s API':
 
@@ -166,7 +166,7 @@ export class CounterComponent {
 
 Note how `@Output counterChange` is set to a `new` instance of `EventEmitter`, this `@Output` decorator makes the `counterChange` property available as an event binding like we saw in the above template `(counterChange)`.
 
-### EventEmitter API
+## EventEmitter API
 
 Nearly there, we would like to tell the parent Component that the `counterChange` event has happened when the child Component actually updates the value, which as we know happens on a `click` event. Let's emit an event there, as it seems a logical place to do so:
 
@@ -211,7 +211,7 @@ And that's it! Let's take a look at the rendered Component, you can also dig thr
 
 <iframe src="//embed.plnkr.co/Zz0DERCJqHcHUnLhHBrm" frameborder="0" border="0" cellspacing="0" cellpadding="0" width="100%" height="250"></iframe>
 
-### Without @Output decorator
+## Without @Output decorator
 
 Like with `@Input` and `inputs: []` in the previous article, we have the same capabilities with `@Output`. The `@Component` decorator is rather awesome, and provides us an `outputs` property, which is an Array of `@Output` equivalents that we wish to use inside the particular Component. Refactoring the above code we can do this:
 
