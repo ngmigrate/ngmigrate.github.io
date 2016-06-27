@@ -1,7 +1,6 @@
-# material-jekyll-theme
-[Demo](http://alexcarpenter.me/material-jekyll-theme)
+# ngMigrate
 
-![Material Jekyll Theme](https://d13yacurqjgara.cloudfront.net/users/37718/screenshots/2430279/slice_1.jpg)
+<img src="img/logo-dark.svg" style="max-width: 50%; margin: 0 auto;">
 
 ## Getting started
 1. `git clone https://github.com/alexcarpenter/material-jekyll-theme.git`
