@@ -375,6 +375,20 @@ pre.editor {
 .single {
   background: #f1f2f1;
   padding: 30px 0;
+  &__migrate {
+    padding: 15px 55px;
+    background: #0273D4 url(../img/icons/angular.svg) no-repeat 40px 0;
+    background-size: 80px 80px;
+    color: #fff;
+    margin: 0 -55px 0;
+    p {
+      font-family: 'Museo Slab', 'Helvetica Neue', Helvetica, sans-serif;
+      margin: 15px 0 15px 75px !important;
+      span {
+        font-weight: 900;
+      }
+    }
+  }
   &__author {
     padding: 25px;
     display: table;
@@ -392,7 +406,7 @@ pre.editor {
       background: darken($secondary, 2%);
     }
     &--top {
-      margin: -55px -55px 45px;
+      margin: -55px -55px 0px;
     }
     &--bottom {
       margin: 55px -55px 45px;
@@ -437,8 +451,7 @@ pre.editor {
     }
   }
   &__meta {
-    margin: -15px 0 0;
-    padding: 0 0 25px;
+    padding: 25px 0;
     font-size: 12px;
     border-bottom: 1px solid #efefef;
     i {
@@ -463,6 +476,7 @@ pre.editor {
       }
     }
     a {
+      margin: 0;
       float: right;
       transition: all 0.2s ease-in-out;
       &:hover {
@@ -527,19 +541,5 @@ pre.editor {
   }
   &__comments {
     margin: 55px 0 0;
-  }
-}
-.migrate-version {
-  padding: 15px 55px;
-  background: #0273D4 url(../img/icons/angular.svg) no-repeat 40px 0;
-  background-size: 80px 80px;
-  color: #fff;
-  margin: 25px -55px -55px;
-  p {
-    font-family: 'Museo Slab', 'Helvetica Neue', Helvetica, sans-serif;
-    margin: 15px 0 15px 75px;
-    span {
-      font-weight: 900;
-    }
   }
 }

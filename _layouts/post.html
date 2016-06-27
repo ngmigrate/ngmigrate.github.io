@@ -6,6 +6,14 @@ layout: page
 
 {% include author.html position="top" %}
 
+{% if page.version %}
+<div class="single__migrate">
+  <p>
+    This guide was written for Angular 2 version: <span>{{ page.version }}</span>
+  </p>
+</div>
+{% endif %}
+
 <div class="single__meta cf">
   <div class="single__meta-info">
     <span>
