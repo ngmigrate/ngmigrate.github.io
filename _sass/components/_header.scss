@@ -451,9 +451,8 @@ pre.editor {
     }
   }
   &__meta {
-    padding: 25px 0;
+    padding: 45px 0 25px 0;
     font-size: 12px;
-    border-bottom: 1px solid #efefef;
     i {
       font-size: 16px;
     }
@@ -482,6 +481,7 @@ pre.editor {
       &:hover {
         color: #fff;
         background: $secondary;
+        border-color: 1px solid darken($secondary, 10%);
         i {
           color: $primary;
         }
