@@ -1,14 +1,14 @@
 ---
 layout: post
 permalink: /bootstrapping-in-angular-2
-title: Bootstrapping in Angular 2
+title: Bootstrapping in the browser with Angular 2
 author: toddmotto
 path: 2016-06-27-bootstrapping-in-angular-2.md
 tags: bootstrapping
 version: 2.0.0-rc.3
 ---
 
-Angular 1.x allows us to bootstrap our applications in two different ways, using the `ng-app` Directive, or the `angular.bootstrap` method on the `angular` global. Let's explore the Angular 1.x concepts and then dive into how we do the same in Angular 2.
+Angular 1.x allows us to bootstrap our applications in two different ways, using the `ng-app` Directive, or the `angular.bootstrap` method on the `angular` global. Let's explore the Angular 1.x concepts and then dive into how we do the same in Angular 2. For this guide, we'll be bootstrapping in the browser, as Angular 2 also lets us bootstrap in a WebWorker and on the server.
 
 ## Table of contents
 
@@ -17,6 +17,8 @@ Already know the Angular 1.x stuff? Skip to wherever you need below:
 - [Angular 1.x](#angular-1x)
   - [Bootstrapping with ng-app](#bootstrapping-with-ng-app)
   - [Bootstrapping with angular.bootstrap](#bootstrapping-with-angularbootstrap)
+- [Angular 2](#angular-2)
+
 
 ## Angular 1.x
 
@@ -71,3 +73,5 @@ angular.bootstrap(document.documentElement, ['app'], {
 {% endhighlight %}
 
 ## Angular 2
+
+When it comes to Angular 2 bootstrapping, there are some notable changes. First, is the shift to using TypeScript, and as such ES2015 modules, the second is that `ng-app` is dead. There is also a new addition to bootstrapping, a root component/container for our app. Let's roll through these and learn how to bootstrap in Angular 2.
