@@ -492,17 +492,6 @@ pre.editor {
     }
   }
   &__content {
-    ul {
-      margin: 0 0 0 20px;
-      padding: 0;
-      list-style: disc;
-      li {
-        ul {
-          margin: 0 0 0 35px;
-          list-style: circle;
-        }
-      }
-    }
     .linkjuice {
       color: #444;
       transition: color 0.2s ease-in-out;
@@ -541,5 +530,42 @@ pre.editor {
   }
   &__comments {
     margin: 55px 0 0;
+  }
+}
+.contents {
+  ul {
+    padding: 0;
+    list-style: none;
+    background: $secondary;
+    li {
+      position: relative;
+      counter-increment: item;
+      a {
+        padding: 8px 10px 8px 55px;
+        display: block;
+        color: #fff;
+      }
+      &:before {
+        font-family: 'Material Icons';
+        content: '\E157';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        padding: 0 10px;
+        background: $primary;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+      }
+      ul {
+        margin: 0 0 0 35px;
+        li {
+          a {
+            background: lighten($secondary, 5%);
+          }
+        }
+      }
+    }
   }
 }

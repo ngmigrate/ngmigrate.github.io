@@ -12,13 +12,12 @@ Angular 1.x allows us to bootstrap our applications in two different ways, using
 
 ## Table of contents
 
-Already know the Angular 1.x stuff? Skip to wherever you need below:
-
-- [Angular 1.x](#angular-1x)
-  - [Bootstrapping with ng-app](#bootstrapping-with-ng-app)
-  - [Bootstrapping with angular.bootstrap](#bootstrapping-with-angularbootstrap)
-- [Angular 2](#angular-2)
-
+<div class="contents" markdown="1">
+* [Angular 1.x](#angular-1x)
+    * [Bootstrapping with ng-app](#bootstrapping-with-ng-app)
+    * [Bootstrapping with angular.bootstrap](#bootstrapping-with-angularbootstrap)
+* [Angular 2](#angular-2)
+</div>
 
 ## Angular 1.x
 
@@ -74,4 +73,8 @@ angular.bootstrap(document.documentElement, ['app'], {
 
 ## Angular 2
 
-When it comes to Angular 2 bootstrapping, there are some notable changes. First, is the shift to using TypeScript, and as such ES2015 modules, the second is that `ng-app` is dead. There is also a new addition to bootstrapping, a root component/container for our app. Let's roll through these and learn how to bootstrap in Angular 2.
+When it comes to Angular 2 bootstrapping, there are some notable changes. First, the shift to TypeScript, and as such ES2015 modules, the second is that `ng-app` is no longer with us. There is also a new addition to bootstrapping, a root component/container for our app. Let's roll through these and learn how to bootstrap in Angular 2.
+
+For the purposes of the following code snippets, we're going to assume you've [setup Angular 2](https://angular.io/docs/ts/latest/quickstart.html) to cut out all the boilerplate stuff, we'll focus on the bootstrapping phase.
+
+###
