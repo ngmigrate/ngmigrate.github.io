@@ -17,6 +17,10 @@ Angular 1.x allows us to bootstrap our applications in two different ways, using
     * [Bootstrapping with ng-app](#bootstrapping-with-ng-app)
     * [Bootstrapping with angular.bootstrap](#bootstrapping-with-angularbootstrap)
 * [Angular 2](#angular-2)
+    * [ES2015 imports](#bootstrapping-with-angularbootstrap)
+    * [Root Component](#bootstrapping-with-angularbootstrap)
+    * [Invoking bootstrap](#bootstrapping-with-angularbootstrap)
+    * [Bootstrapping with angular.bootstrap](#bootstrapping-with-angularbootstrap)
 </div>
 
 ## Angular 1.x
