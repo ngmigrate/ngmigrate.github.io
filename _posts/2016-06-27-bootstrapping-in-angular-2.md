@@ -19,8 +19,7 @@ Angular 1.x allows us to bootstrap our applications in two different ways, using
     * [Root component](#angular-1x-root-component)
 * [Angular 2](#angular-2)
     * [HTML and root element](#html-and-root-element)
-    * [ES2015 imports](#bootstrapping-with-angularbootstrap)
-    * [Invoking bootstrap](#bootstrapping-with-angularbootstrap)
+    * [Bootstrapping](#bootstrapping)
     * [Root Component](#angular-2-root-component)
 </div>
 
@@ -105,7 +104,7 @@ That's "Hello world" status in Angular 1.x, so let's continue to Angular 2!
 
 ## Angular 2
 
-When it comes to Angular 2 bootstrapping, there are some notable changes. First, the shift to TypeScript, and as such ES2015 modules, the second is that `ng-app` is no longer with us. There is also a new addition to bootstrapping, a root component/container for our app. Let's roll through these and learn how to bootstrap in Angular 2.
+When it comes to Angular 2 bootstrapping, there are some notable changes. First, the shift to TypeScript, and as such ES2015 modules, the second is that `ng-app` is no longer with us. There is also a new addition to bootstrapping, an _absolute requirement_ for a root component/container for our app (we don't technically need a `<my-app>` to get Angular 1.x alive and kicking). Let's roll through these and learn how to bootstrap in Angular 2.
 
 For the purposes of the following code snippets, we're going to assume you've [setup Angular 2](https://angular.io/docs/ts/latest/quickstart.html) to cut out all the boilerplate stuff, we'll focus on the bootstrapping phase.
 
@@ -182,129 +181,48 @@ Just like with Angular 1.x, we need some HTML setup with our scripts, of which I
 
 You'll ideally want to use [System.js](https://github.com/systemjs/systemjs) or [Webpack](https://webpack.github.io/) to load your application, we're using System.js as you can see above. We're not going to go into details as to how System.js works, as this is an Angular migration guide.
 
-Note how we're also using `<my-app>` just like in the Angular 1.x example too, which gives us the absolute base we need to get started with Angular. However,
+Note how we're also using `<my-app>` just like in the Angular 1.x example too, which gives us the absolute base we need to get started with Angular.
 
-### First Component
+### Bootstrapping
 
-You may have already seen above that we have a custom element named `<my-app>` with `Loading...` inside, which gets replaced after Angular 2 bootstraps our application. This is our first component, and Angular 2 is _all_ about components!
-
-To create a Component, we need to talk to the `Component` decorator inside the Angular core, so let's setup a file inside `/app` called `app.component.ts`.
-
-Inside `app.component.ts`, we need to import the aforementioned `Component` from `angular2/core`, which serves as our first task:
+To bootstrap our Angular 2 app, we need to first import the necessities from `@angular`, and then call the `bootstrap` function:
 
 {% highlight javascript %}
-// app.component.ts
-import {Component} from 'angular2/core';
+// main.ts
+import {bootstrap} from '@angular/platform-browser-dynamic';
+bootstrap();
 {% endhighlight %}
 
-Perfect, now we have `Component` available! Before we can use the `Component` decorator however, we need to create an ES2015 Class for us to decorate. This is nice and easy, we'll call this Class `AppComponent`:
+Wait, this won't work just yet! The `bootstrap` function expects a Component to be passed as the first argument, so let's import `App` (which we'll create the definition for next) and pass it into `bootstrap`.
+
+> Note how we use 'platform-browser-dynamic' to target the browser platform
 
 {% highlight javascript %}
-// app.component.ts
-import {Component} from 'angular2/core';
+// main.ts
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {App} from './app';
 
-class AppComponent {
-
-}
+bootstrap(App);
 {% endhighlight %}
 
-Now onto the `Component` decorator! This one is nice and easy, we add it above the Class we want to decorate, however to actually use it we need to use `@Component` rather than just `Component`:
+The `bootstrap` function we import gets invoked, and we pass in the `App` reference, of which is going to be our "Root component" just like we saw in our Angular 1.x example.
+
+### Root Component
 
 {% highlight javascript %}
-// app.component.ts
-import {Component} from 'angular2/core';
-
-@Component()
-class AppComponent {
-
-}
-{% endhighlight %}
-
-Next up, we need to pass in some options to our `@Component` declaration, remember the `<my-app>` element? This is where we tell Angular 2 that we're creating a custom element and what name it is through the `selector` property:
-
-{% highlight javascript %}
-// app.component.ts
-import {Component} from 'angular2/core';
-
-@Component({
-  selector: 'my-app'
-})
-class AppComponent {
-
-}
-{% endhighlight %}
-
-Our Component won't do much right now, so we need to give it a template to almost reach "Hello world!" status:
-
-{% highlight javascript %}
-// app.component.ts
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core'
 
 @Component({
   selector: 'my-app',
   template: `
     <div>
-      Hello world!
+      {% raw %}{{ text }}{% endraw %}
     </div>
   `
 })
-class AppComponent {
-
+export class App {
+  constructor() {
+    this.text = 'Hello world!';
+  }
 }
 {% endhighlight %}
-
-Last but not least, as our Component exists inside `app.component.ts`, we need to be able to import it into other files, for this we need to use ES2015 `export` syntax and export the Class:
-
-{% highlight javascript %}
-// app.component.ts
-import {Component} from 'angular2/core';
-
-@Component({
-  selector: 'my-app',
-  template: `
-    <div>
-      Hello world!
-    </div>
-  `
-})
-export class AppComponent {
-
-}
-{% endhighlight %}
-
-And we're done, our first Component is cooked and ready to go. Now let's bootstrap it.
-
-### Bootstrapping the app
-
-Angular 2 bootstrapping is nothing like bootstrapping apps in Angular 1.x. In Angular 1 we could use the `ng-app` Directive, and give it a value such as `ng-app="myApp"`, or use the `angular.bootstrap` method which allows for asynchronous bootstrapping.
-
-In Angular 2 we need to `import` the `bootstrap` method from inside Angular 2. The place we need to fetch the `bootstrap` method is `angular2/platform/browser`.
-
-Looping back real quick to the beginning where we told System.js to look for `main.ts`, so far it doesn't exist, so this is our next task!
-
-Let's create `main.ts` and import that beloved `bootstrap` method:
-
-{% highlight javascript %}
-// main.ts
-import {bootstrap} from 'angular2/platform/browser';
-{% endhighlight %}
-
-That was easy, what's next? Well, we can't Bootstrap a Component that doesn't exist, so we need to import our previously created `AppComponent`, nice and easy:
-
-{% highlight javascript %}
-// main.ts
-import {bootstrap} from 'angular2/platform/browser';
-import {AppComponent} from './app.component';
-{% endhighlight %}
-
-Awesome, now `AppComponent` exists in our `main.ts` file, the final piece of the puzzle is bootstrapping the `AppComponent` with a simple function call:
-
-{% highlight javascript %}
-// main.ts
-import {bootstrap} from 'angular2/platform/browser';
-import {AppComponent} from './app.component';
-
-bootstrap(AppComponent);
-{% endhighlight %}
-
-And you're done!
