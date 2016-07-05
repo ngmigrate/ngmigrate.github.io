@@ -1,9 +1,9 @@
 ---
 layout: post
-permalink: /property-binding-to-pass-data-into-components
+permalink: /component-property-binding-with-input
 title: Component property binding with @Input()
 author: toddmotto
-path: 2016-07-05-property-binding-to-pass-data-into-components.md
+path: 2016-07-05-component-property-binding-with-input.md
 tags: components
 version: 2.0.0-rc.4
 ---
