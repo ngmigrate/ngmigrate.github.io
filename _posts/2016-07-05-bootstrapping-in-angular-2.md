@@ -67,7 +67,7 @@ angular.module('app', []);
 angular.bootstrap(document.documentElement, ['app']);
 {% endhighlight %}
 
-So the `angular.bootstrap` method's first argument is the DOM node you wish to mount your application to, and the second (optional) argument being an Array of module names you wish to bootstrap, which is typically just a single module. There is also a third (optional) argument for invoking our app in `strictDi` mode:
+So the `angular.bootstrap` method's first argument is the DOM node you wish to mount your application to, and the second (optional) argument being an Array of module names you wish to bootstrap, which is typically just a single module. There is also a third (optional) argument for invoking our app in [strictDi mode](https://docs.angularjs.org/guide/di#using-strict-dependency-injection):
 
 {% highlight javascript %}
 // app.js
