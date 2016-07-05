@@ -3,9 +3,9 @@ layout: post
 permalink: /bootstrapping-in-angular-2
 title: Bootstrapping in the browser with Angular 2
 author: toddmotto
-path: 2016-06-27-bootstrapping-in-angular-2.md
+path: 2016-07-05-bootstrapping-in-angular-2.md
 tags: bootstrapping
-version: 2.0.0-rc.3
+version: 2.0.0-rc.4
 ---
 
 Angular 1.x allows us to bootstrap our applications in two different ways, using the `ng-app` Directive, or the `angular.bootstrap` method on the `angular` global. Let's explore the Angular 1.x concepts and then dive into how we do the same in Angular 2. For this guide, we'll be bootstrapping in the browser, as Angular 2 also lets us bootstrap in a WebWorker and on the server.
@@ -123,19 +123,15 @@ Just like with Angular 1.x, we need some HTML setup with our scripts, of which I
     <script src="//npmcdn.com/typescript@1.8.10/lib/typescript.js"></script>
     <script>
     System.config({
-      //use typescript for compilation
       transpiler: 'typescript',
-      //typescript compiler options
       typescriptOptions: {
         emitDecoratorMetadata: true
       },
-      //map tells the System loader where to look for things
       map: {
         app: "./src",
         '@angular': 'https://npmcdn.com/@angular',
         'rxjs': 'https://npmcdn.com/rxjs@5.0.0-beta.6'
       },
-      //packages defines our app package
       packages: {
         app: {
           main: './main.ts',
@@ -209,8 +205,10 @@ The `bootstrap` function we import gets invoked, and we pass in the `App` refere
 
 ### Root Component
 
+As we're already importing `{App}`, we need to create the component for it. Much like `.component()` syntax in Angular 1.x, we have a similar API called `@Component()`, which is actually a TypeScript decorator. Note the similarity between an Angular 1.x `.component()`, which contains a "controller", in Angular 2, controllers no longer exist, instead we use an ES2015 Class to contain this logic.
+
 {% highlight javascript %}
-import {Component} from '@angular/core'
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -226,3 +224,9 @@ export class App {
   }
 }
 {% endhighlight %}
+
+Notable changes here are the new `selector` property, which defines the name of the custom element. In this case, we're using `my-app`, which corresponds across to `<my-app>`. This is also a nicer change than the camelCase syntax we used for component/directive naming in Angular 1.x.
+
+### Final code
+
+<iframe src="https://embed.plnkr.co/UOPYiNFqUqcFUtYx6T2b/" frameborder="0" border="0" cellspacing="0" cellpadding="0" width="100%" height="250"></iframe>
