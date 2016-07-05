@@ -1,13 +1,16 @@
-<nav class="c-navigation is-fixed">
-  <div class="wrapper">
-    <a href="{{ "/" | prepend: site.baseurl }}" class="c-navigation__item {% if page.url == '/' %}is-active{% endif %}">
+<nav class="nav is-fixed">
+  <div class="wrapper cf">
+    <a href="{{ "/" | prepend: site.baseurl }}" class="nav__item {% if page.url == '/' %}is-active{% endif %}">
       Home
     </a>
-    <a href="{{ "/topics/" | prepend: site.baseurl }}" class="c-navigation__item {% if page.url == '/topics' %}is-active{% endif %}">
+    <a href="{{ "/topics/" | prepend: site.baseurl }}" class="nav__item {% if page.url == '/topics' %}is-active{% endif %}">
       Topics
     </a>
-    <a href="https://github.com/ngmigrate/ngmigrate.github.io" target="_blank" class="c-navigation__item">
+    <a href="https://github.com/ngmigrate/ngmigrate.github.io" target="_blank" class="nav__item">
       GitHub <i class="material-icons">&#xE895;</i>
+    </a>
+    <a href="{{ "/" | prepend: site.baseurl }}" class="nav__logo">
+      <img src="/img/blank.gif" alt="">
     </a>
   </div>
 </nav>
