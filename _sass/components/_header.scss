@@ -390,10 +390,20 @@ pre.editor {
     }
   }
   &__author {
+    position: relative;
     padding: 25px;
     display: table;
-    background: $secondary;
+    background: #fff;
     border-top: 30px solid #f1f2f1;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $primary;
+      width: 100%;
+      height: 2px;
+    }
     ul {
       margin: 0 !important;
       list-style: none !important;
@@ -434,11 +444,10 @@ pre.editor {
       img {
         vertical-align: bottom;
         border-radius: 50%;
-        border: 5px solid lighten($secondary, 5%);
+        border: 5px solid #e5e5e5;
       }
     }
     &-desc {
-      color: #fff;
       width: 100%;
       vertical-align: top;
       display: table-cell;
