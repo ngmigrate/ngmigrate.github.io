@@ -57,7 +57,7 @@ And that's pretty much it; we have `ng-app` and `angular.module()` as the key in
 
 ### Bootstrapping with angular.bootstrap
 
-The alternative way to bootstrapping in Angular 1.x is through use of the `angular.bootstrap` method, which is a way to manually bootstrap single, or multiple, Angular 1.x applications. It's the same ingredients as `ng-app` essentially calls the `bootstrap` method for us. So using `angular.bootstrap` gives us that exposed method to be able to manually bootstrap out app.
+The alternative way to bootstrapping in Angular 1.x is through use of the `angular.bootstrap` method, which is a way to manually bootstrap single, or multiple, Angular 1.x applications. It's the same ingredients as `ng-app` essentially calls the `bootstrap` method for us. So using `angular.bootstrap` gives us that exposed method to be able to manually bootstrap our app.
 
 Again, we'll need an `angular.module()` setup, and then we can bootstrap the application:
 
