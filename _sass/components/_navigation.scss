@@ -10,7 +10,6 @@
   width: 100%;
   background: $t-theme;
   z-index: 10;
-
   &:after {
     content: '';
     position: absolute;
@@ -20,7 +19,6 @@
     height: 10px;
     background: linear-gradient(to bottom, rgba(#000, .25), rgba(#000, 0));
   }
-
   &.is-fixed {
     position: fixed;
     will-change: transform;
@@ -32,11 +30,12 @@
   display: inline-block;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Museo Slab', sans-serif;
+  font-weight: 300;
   color: $c__white;
-  text-transform: uppercase;
-  &:not(:last-of-type) {
-    margin-right: 2.5rem;
+  margin: 0 15px 0 0;
+  i {
+    font-size: 16px;
   }
   &:after {
     content: '';
@@ -48,7 +47,6 @@
     background: transparent;
     transition: background ease-in-out 0.2s;
   }
-
   &:hover:after,
   &.is-active:after {
     background: $c__white;
