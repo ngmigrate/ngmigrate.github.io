@@ -237,8 +237,11 @@ pre.editor {
   background: darken($secondary, 2%);
 }
 .c-topics {
-  display: table;
-  background: $secondary;
+  background: #f1f2f1;
+  padding: 55px 0;
+  &__items {
+    display: table;
+  }
   &__preview {
     margin: 25px 0;
   }
@@ -268,8 +271,7 @@ pre.editor {
     min-width: 350px;
     display: table-cell;
     vertical-align: top;
-    background: #f1f2f1;
-    padding: 45px;
+    padding: 0 45px 0 0;
     h1 {
       color: #fff;
       font-size: 20px;
@@ -336,13 +338,12 @@ pre.editor {
     display: table-cell;
     vertical-align: top;
     width: 100%;
-    background: #f1f2f1;
     padding: 0;
     ul {
       list-style: none;
       margin: 0;
       li {
-        margin: 45px 45px 0 0;
+        margin: 0 0 45px 0;
         position: relative;
         &:last-child {
           margin-bottom: 45px;
