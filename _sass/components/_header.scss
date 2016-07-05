@@ -404,6 +404,16 @@ pre.editor {
       width: 100%;
       height: 2px;
     }
+    .index & {
+      background: darken($secondary, 2%);
+      color: #fff;
+      &:before {
+        display: none;
+      }
+      img {
+        border-color: lighten($secondary, 4%);
+      }
+    }
     ul {
       margin: 0 !important;
       list-style: none !important;
