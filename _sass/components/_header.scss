@@ -12,6 +12,9 @@
 .c-header {
   padding: 5rem 2.5rem;
   background: lighten($secondary, 2%) url('../img/kendoka/2.svg') no-repeat 100% 0;
+  @media screen and (max-width:  550px) {
+    background-image: none;
+  }
 }
 .c-hero {
   text-align: center;

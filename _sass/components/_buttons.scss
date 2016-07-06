@@ -21,8 +21,12 @@
   font-size: 15px;
   font-weight: 300;
   &--primary {
+    transition: all 0.2s ease-in-out;
     background: $primary;
     color: #fff;
+    &:hover {
+      background-color: darken($primary, 4%);
+    }
   }
   &--shield {
     background-image: url('../img/btn-shield.png');
