@@ -444,6 +444,37 @@ pre.editor {
 .single {
   background: #f1f2f1;
   padding: 30px 0;
+  &__back {
+    background: #f1f2f1;
+    text-align: center;
+    &--top {
+      margin: -55px -55px 55px;
+    }
+    &--bottom {
+      margin: 55px -55px -55px;
+      padding: 30px 0 0;
+    }
+    a {
+      transition: all 0.2s ease-in-out;
+      display: inline-block;
+      color: #fff;
+      background: lighten($secondary, 4%);
+      padding: 8px 15px 8px 40px;
+      position: relative;
+      border-radius: 100px;
+      font-size: 15px;
+      font-family: 'Museo Slab', 'Helvetica Neue', Helvetica, sans-serif;
+      &:hover {
+        background: $secondary;
+      }
+      i {
+        color: $primary;
+        position: absolute;
+        top: 7px;
+        left: 10px;
+      }
+    }
+  }
   &__migrate {
     padding: 15px 55px;
     background: #0273D4 url(../img/icons/angular.svg) no-repeat 40px 0;
@@ -584,7 +615,7 @@ pre.editor {
       &:hover {
         color: #fff;
         background: $secondary;
-        border-color: 1px solid darken($secondary, 10%);
+        border-color: darken($secondary, 10%);
         i {
           color: $primary;
         }
