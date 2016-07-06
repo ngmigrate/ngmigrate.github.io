@@ -690,6 +690,7 @@ pre.editor {
       @media screen and (max-width: 550px) {
         margin: 55px -10px;
         padding: 55px 0 0 10px;
+        font-size: 24px;
       }
       .linkjuice-icon {
         top: 6px;
@@ -717,6 +718,9 @@ pre.editor {
       position: relative;
       counter-increment: item;
       padding: 12px 10px 12px 55px;
+      @media screen and (max-width: 550px) {
+        padding-left: 45px;
+      }
       a {
         color: #444;
       }
@@ -732,6 +736,9 @@ pre.editor {
         font-size: 20px;
       }
       ul {
+        @media screen and (max-width: 550px) {
+          margin: 0 0 0 -25px;
+        }
         li {
           a {
             transition: all 0.2s ease-in-out;
@@ -756,4 +763,7 @@ blockquote {
   border: none;
   padding: 0 20%;
   text-align: left;
+  @media screen and (max-width: 550px) {
+    padding: 0 10%;
+  }
 }
