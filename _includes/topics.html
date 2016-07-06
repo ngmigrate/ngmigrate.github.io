@@ -55,17 +55,19 @@
 </section>
 <script>
 (function () {
-  var button = document.querySelector('a[data-button]');
-  var content = document.querySelector('ul[data-content]');
   var buttonAttr = 'data-button';
   var contentAttr = 'data-content';
+  var hidden = 'hidden';
+  var visible = 'visible';
+  var button = document.querySelector('a[' + buttonAttr + ']');
+  var content = document.querySelector('ul[' + contentAttr + ']');
   function toggleTopics(event) {
     event.preventDefault();
     button.setAttribute(buttonAttr, (
-      button.getAttribute(buttonAttr) === 'hidden' ? 'visible' : 'hidden'
+      button.getAttribute(buttonAttr) === hidden ? visible : hidden
     ));
     content.setAttribute(contentAttr, (
-      content.getAttribute(contentAttr) === 'hidden' ? 'visible' : 'hidden'
+      content.getAttribute(contentAttr) === hidden ? visible : hidden
     ));
   }
   button.addEventListener('click', toggleTopics);
