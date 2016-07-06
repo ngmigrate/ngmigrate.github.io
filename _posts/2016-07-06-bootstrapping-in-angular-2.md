@@ -3,9 +3,10 @@ layout: post
 permalink: /bootstrapping-in-angular-2
 title: Bootstrapping in the browser with Angular 2
 author: toddmotto
-path: 2016-07-05-bootstrapping-in-angular-2.md
+path: 2016-07-06-bootstrapping-in-angular-2.md
 tags: bootstrapping
 version: 2.0.0-rc.4
+intro: In this guide you'll learn how to bootstrap an Angular 2 application.
 ---
 
 Angular 1.x allows us to bootstrap our applications in two different ways, using the `ng-app` Directive, or the `angular.bootstrap` method on the `angular` global. Let's explore the Angular 1.x concepts and then dive into how we do the same in Angular 2. For this guide, we'll be bootstrapping in the browser, as Angular 2 also lets us bootstrap in a WebWorker and on the server.

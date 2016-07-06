@@ -25,7 +25,7 @@
         background-size: 148px 45px;
       }
     }
-    @media screen and (max-width:  550px) {
+    @media screen and (max-width: 550px) {
       display: none;
     }
   }
@@ -41,6 +41,9 @@
   &.is-fixed {
     position: fixed;
     will-change: transform;
+    @media screen and (max-width: 750px) {
+      position: static;
+    }
   }
   &__item {
     position: relative;

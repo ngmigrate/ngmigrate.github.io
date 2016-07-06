@@ -3,9 +3,10 @@ layout: post
 permalink: /component-property-binding-with-input
 title: Component property binding with @Input()
 author: toddmotto
-path: 2016-07-05-component-property-binding-with-input.md
+path: 2016-07-06-component-property-binding-with-input.md
 tags: components
 version: 2.0.0-rc.4
+intro: In this guide you'll learn how to pass data into Angular 2 components through property binding.
 ---
 
 With component architecture, it's an important to design components to contain what we call inputs and outputs. The data enters a component via an input, and leaves the component through an output. This is a small but powerful conceptual change to Angular 1.x's two-way data-binding in which changes automatically propagate to all listeners for that particular binding. Angular 1.x introduced one-way data-flow in the Angular 1.5.x branch, to which mirrors the Angular 2 way of building components. For this guide, we'll be using Angular 1.x's `.component()` method to compare to Angular 2.
@@ -28,20 +29,23 @@ With component architecture, it's an important to design components to contain w
 
 ## Angular 1.x
 
-In Angular 1.x, we have multiple ways to pass information into a "component". Before Angular 1.5.x, this was done always through the `.directive()` API, to which contains `scope` and `bindToController` properties for bindings. In Angular 1.5.x the `.component()` API was introduced and we used a single `bindings` property. To pass information to a component, we need to use attribute binding.
+In Angular 1.x, we have multiple ways to pass information into a "component". Before Angular 1.5.x, this was done always through the `.directive()` API, which contains `scope` and `bindToController` properties for bindings. In Angular 1.5.x the `.component()` API was introduced and we use a single `bindings` property. To pass information to a component, we need to use attribute binding.
 
 ### Attribute binding
 
-To use the Component we simple can declare it inside a template and use a custom attribute on the element itself, in this case `count` inside the `bindings` Object maps directly across to the custom attribute declared when using the element:
+To use the Component we declare it inside a template and use a custom attribute on the element itself, in this case `count` inside the `bindings` Object maps directly across to the custom attribute declared when using the element:
 
 {% highlight javascript %}
 const app = {
   template: `
     <div>
       My Counter:
-      <counter count="2"></counter>
+      <counter count="$ctrl.count"></counter>
     </div>
-  `
+  `,
+  controller() {
+    this.count = 2;
+  }
 };
 
 angular
@@ -49,7 +53,7 @@ angular
   .component('app', app);
 {% endhighlight %}
 
-The number `2` is hardcoded here, however in a real world application would be data-driven. We call this "attribute binding" because Angular 1.x grabs existing HTML and extends it, therefore we use a custom attribute.
+We call this "attribute binding" because Angular 1.x grabs existing HTML and extends it, therefore we use a custom attribute.
 
 ### Directive attribute bindings
 
@@ -324,4 +328,4 @@ These aren't typically advised either, you're best sticking with TypeScript deco
 
 ## Final code
 
-<iframe src="https://embed.plnkr.co/nkkk0hs0nYoMXo7OZFUW/" frameborder="0" border="0" cellspacing="0" cellpadding="0" width="100%" height="250"></iframe>
+<iframe src="https://embed.plnkr.co/XnNM2XOItb2jOrkv9XiF/" frameborder="0" border="0" cellspacing="0" cellpadding="0" width="100%" height="250"></iframe>
