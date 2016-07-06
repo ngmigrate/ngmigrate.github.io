@@ -21,6 +21,7 @@ Angular 1.x allows us to bootstrap our applications in two different ways, using
     * [HTML and root element](#html-and-root-element)
     * [Bootstrapping](#bootstrapping)
     * [Root Component](#angular-2-root-component)
+* [Final code](#final-code)
 </div>
 
 ## Angular 1.x
@@ -83,13 +84,13 @@ When bootstrapping a "Hello world" in Angular 1.x, we'll need a root element. Th
 
 {% highlight javascript %}
 // app.component.js
-var myApp = {
+const myApp = {
   template: `
     <div>
       {% raw %}{{ $ctrl.text }}{% endraw %}
     </div>
   `,
-  controller: function () {
+  controller() {
     this.$onInit = function () {
       this.message = 'Hello world';
     };
@@ -196,7 +197,7 @@ Wait, this won't work just yet! The `bootstrap` function expects a Component to 
 {% highlight javascript %}
 // main.ts
 import {bootstrap} from '@angular/platform-browser-dynamic';
-import {App} from './app';
+import App from './app';
 
 bootstrap(App);
 {% endhighlight %}
@@ -218,15 +219,17 @@ import {Component} from '@angular/core';
     </div>
   `
 })
-export class App {
+export default class App {
+  public text: string;
   constructor() {
     this.text = 'Hello world!';
   }
 }
+
 {% endhighlight %}
 
 Notable changes here are the new `selector` property, which defines the name of the custom element. In this case, we're using `my-app`, which corresponds across to `<my-app>`. This is also a nicer change than the camelCase syntax we used for component/directive naming in Angular 1.x.
 
-### Final code
+## Final code
 
-<iframe src="https://embed.plnkr.co/UOPYiNFqUqcFUtYx6T2b/" frameborder="0" border="0" cellspacing="0" cellpadding="0" width="100%" height="250"></iframe>
+<iframe src="https://embed.plnkr.co/uBT48Diy4Js7gGogW6dH/" frameborder="0" border="0" cellspacing="0" cellpadding="0" width="100%" height="250"></iframe>
