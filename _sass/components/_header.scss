@@ -12,7 +12,7 @@
 .c-header {
   padding: 5rem 2.5rem;
   background: lighten($secondary, 2%) url('../img/kendoka/2.svg') no-repeat 100% 0;
-  @media screen and (max-width:  550px) {
+  @media screen and (max-width: 550px) {
     background-image: none;
   }
 }
@@ -24,7 +24,7 @@
     padding: 10rem 0 0;
     background: $secondary url("../img/kendoka/1.svg") no-repeat 0px 100%;
     background-size: 150px 150px;
-    @media screen and (max-width:  550px) {
+    @media screen and (max-width: 550px) {
       background-image: none;
     }
   }
@@ -35,7 +35,7 @@
   float: left;
   width: 50%;
   padding: 25px 25px 0 0;
-  @media screen and (max-width:  550px) {
+  @media screen and (max-width: 550px) {
     width: 100%;
     text-align: center;
     padding: 25px 0 0;
@@ -56,7 +56,7 @@
 .c-editor {
   width: 50%;
   float: right;
-  @media screen and (max-width:  550px) {
+  @media screen and (max-width: 550px) {
     width: 100%;
   }
 }
@@ -481,9 +481,19 @@ pre.editor {
     background-size: 80px 80px;
     color: #fff;
     margin: 0 -55px 0;
+    @media screen and (max-width: 550px) {
+      margin: 65px -10px 0;
+      padding: 15px 10px;
+      font-size: 13px;
+      background-position: 10px 47%;
+      background-size: 50px 50px;
+    }
     p {
       font-family: 'Museo Slab', 'Helvetica Neue', Helvetica, sans-serif;
       margin: 15px 0 15px 75px !important;
+      @media screen and (max-width: 550px) {
+        margin: 15px 0 15px 55px !important;
+      }
       span {
         font-weight: 900;
       }
@@ -495,7 +505,7 @@ pre.editor {
     display: table;
     background: #fff;
     border-top: 30px solid #f1f2f1;
-    @media screen and (max-width:  550px) {
+    @media screen and (max-width: 550px) {
       display: block;
     }
     &:before {
@@ -523,6 +533,9 @@ pre.editor {
     }
     p {
       margin: 15px 0;
+      @media screen and (max-width: 550px) {
+        font-size: 14px;
+      }
     }
     &--home {
       border-top: 0;
@@ -530,10 +543,16 @@ pre.editor {
     }
     &--top {
       margin: -55px -55px 0px;
+      @media screen and (max-width: 550px) {
+        margin: -55px -10px;
+      }
     }
     &--bottom {
       margin: 55px -55px 45px;
       border-bottom: 1px solid #e5e5e5;
+      @media screen and (max-width: 550px) {
+        margin: -55px -10px;
+      }
     }
     &-links {
       ul {
@@ -556,7 +575,7 @@ pre.editor {
       min-width: 120px;
       vertical-align: top;
       display: table-cell;
-      @media screen and (max-width:  550px) {
+      @media screen and (max-width: 550px) {
         width: 40%;
         display: block;
         margin: 0 auto;
@@ -572,7 +591,7 @@ pre.editor {
       vertical-align: top;
       display: table-cell;
       padding: 0 0 0 25px;
-      @media screen and (max-width:  550px) {
+      @media screen and (max-width: 550px) {
         width: 100%;
         padding: 0;
         text-align: center;
@@ -626,6 +645,11 @@ pre.editor {
     }
   }
   &__content {
+    background: #fff;
+    padding: 55px;
+    @media screen and (max-width: 550px) {
+      padding: 45px 10px;
+    }
     .linkjuice {
       color: #444;
       transition: color 0.2s ease-in-out;
@@ -657,8 +681,6 @@ pre.editor {
       font-weight: normal;
       margin: 25px 0;
     }
-    background: #fff;
-    padding: 55px;
     p {
       margin: 15px 0;
     }
