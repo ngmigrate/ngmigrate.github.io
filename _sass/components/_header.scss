@@ -59,6 +59,11 @@
   @media screen and (max-width: 550px) {
     width: 100%;
   }
+  .editor {
+    @media screen and (max-width: 550px) {
+      overflow: hidden;
+    }
+  }
 }
 .c-logo {
   margin: 25px 0;
