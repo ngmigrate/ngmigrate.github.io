@@ -1,7 +1,7 @@
 <section class="c-topics__links">
   <h1>
     Topics
-    <a href="#" data-toggle>
+    <a href="#" data-button="hidden">
       <i class="material-icons">&#xE313;</i>
     </a>
   </h1>
@@ -55,12 +55,17 @@
 </section>
 <script>
 (function () {
-  var button = document.querySelector('a[data-toggle]');
+  var button = document.querySelector('a[data-button]');
   var content = document.querySelector('ul[data-content]');
+  var buttonAttr = 'data-button';
+  var contentAttr = 'data-content';
   function toggleTopics(event) {
     event.preventDefault();
-    content.setAttribute('data-content', (
-      content.getAttribute('data-content') === 'hidden' ? 'visible' : 'hidden'
+    button.setAttribute(buttonAttr, (
+      button.getAttribute(buttonAttr) === 'hidden' ? 'visible' : 'hidden'
+    ));
+    content.setAttribute(contentAttr, (
+      content.getAttribute(contentAttr) === 'hidden' ? 'visible' : 'hidden'
     ));
   }
   button.addEventListener('click', toggleTopics);

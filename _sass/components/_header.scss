@@ -339,10 +339,19 @@ pre.editor {
         bottom: 0;
         width: 50px;
         background: darken($primary, 10%);
+        transition: all 0.2s ease-in-out;
         color: #fff;
         text-align: center;
+        &:hover {
+          background: darken($primary, 15%);
+        }
         @media screen and (min-width: 550px) {
           display: none;
+        }
+        &[data-button=visible] {
+          i {
+            transform: rotate(180deg);
+          }
         }
         i {
           font-size: 24px;
