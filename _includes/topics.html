@@ -1,8 +1,11 @@
 <section class="c-topics__links">
   <h1>
     Topics
+    <a href="#" data-toggle>
+      <i class="material-icons">&#xE313;</i>
+    </a>
   </h1>
-  <ul class="tags">
+  <ul class="tags" data-content="hidden">
     <li>
       <a href="/bootstrapping" class="{% if page.url == '/bootstrapping' %}is-active{% endif %}">
         Bootstrapping
@@ -50,3 +53,16 @@
     </li>
   </ul>
 </section>
+<script>
+(function () {
+  var button = document.querySelector('a[data-toggle]');
+  var content = document.querySelector('ul[data-content]');
+  function toggleTopics(event) {
+    event.preventDefault();
+    content.setAttribute('data-content', (
+      content.getAttribute('data-content') === 'hidden' ? 'visible' : 'hidden'
+    ));
+  }
+  button.addEventListener('click', toggleTopics);
+})();
+</script>

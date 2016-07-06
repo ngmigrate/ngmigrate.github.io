@@ -10,6 +10,9 @@
   width: 100%;
   background: $t-theme;
   z-index: 10;
+  @media screen and (max-width:  550px) {
+    text-align: center;
+  }
   &__logo {
     float: right;
     margin: 12px 0 0;
@@ -21,6 +24,9 @@
         background: url('../img/logo-inverse.svg') no-repeat 0 0;
         background-size: 148px 45px;
       }
+    }
+    @media screen and (max-width:  550px) {
+      display: none;
     }
   }
   &:after {
