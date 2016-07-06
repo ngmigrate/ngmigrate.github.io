@@ -17,10 +17,9 @@
   min-width: 140px;
   padding: 0 30px;
   display: inline-block;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-family: 'Museo Slab', 'Helvetica', 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
   &--primary {
     background: $primary;
     color: #fff;
@@ -41,6 +40,8 @@
     padding: 0 30px 0 55px;
   }
   &--bottom {
+    transition: all 0.2s ease-in-out;
+    transition-property: background-color, color;
     cursor: pointer;
     text-align: left;
     border-radius: 0;
@@ -51,11 +52,13 @@
     line-height: 34px;
     position: relative;
     &:after {
-      content: '\E8E4';
+      font-size: 18px;
+      content: '\E315';
       font-family: 'Material Icons';
       position: absolute;
       top: 5px;
       right: 15px;
+      color: $primary;
     }
     i {
       text-align: right;
