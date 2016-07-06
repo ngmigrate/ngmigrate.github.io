@@ -284,7 +284,7 @@ pre.editor {
   }
   &__items {
     display: table;
-    @media screen and (max-width: 550px) {
+    @media screen and (max-width: 700px) {
       display: block;
     }
   }
@@ -305,6 +305,11 @@ pre.editor {
       position: relative;
       padding: 8px 10px 8px 40px;
       margin: 0 10px 0 0;
+      @media screen and (max-width: 375px) {
+        width: 100%;
+        display: block;
+        margin: 0 0 5px;
+      }
       i {
         color: lighten($secondary, 50%);
         position: absolute;
@@ -318,7 +323,7 @@ pre.editor {
     display: table-cell;
     vertical-align: top;
     padding: 0 45px 0 0;
-    @media screen and (max-width: 550px) {
+    @media screen and (max-width: 700px) {
       display: block;
       min-width: 100%;
       padding: 0;
@@ -345,7 +350,7 @@ pre.editor {
         &:hover {
           background: darken($primary, 15%);
         }
-        @media screen and (min-width: 550px) {
+        @media screen and (min-width: 700px) {
           display: none;
         }
         &[data-button=visible] {
@@ -371,7 +376,7 @@ pre.editor {
       &[data-content=hidden] {
         display: none;
       }
-      @media screen and (min-width: 550px) {
+      @media screen and (min-width: 700px) {
         &[data-content=hidden] {
           display: block;
         }
