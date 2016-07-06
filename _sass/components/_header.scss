@@ -449,10 +449,16 @@ pre.editor {
     text-align: center;
     &--top {
       margin: -55px -55px 55px;
+      @media screen and (max-width: 550px) {
+        margin: -55px -10px 55px;
+      }
     }
     &--bottom {
       margin: 55px -55px -55px;
       padding: 30px 0 0;
+      @media screen and (max-width: 550px) {
+        margin: 55px -10px -55px;
+      }
     }
     a {
       transition: all 0.2s ease-in-out;
@@ -619,6 +625,11 @@ pre.editor {
       position: relative;
       padding: 8px 10px 8px 40px;
       margin: 0 10px 0 0;
+      @media screen and (max-width: 650px) {
+        width: 100%;
+        display: block;
+        margin: 0 0 5px;
+      }
       i {
         transition: all 0.2s ease-in-out;
         color: lighten($secondary, 30%);
@@ -642,6 +653,9 @@ pre.editor {
     }
     &-info {
       float: left;
+      @media screen and (max-width: 650px) {
+        width: 100%;
+      }
     }
   }
   &__content {
@@ -673,6 +687,10 @@ pre.editor {
       border-top: 30px solid #f1f2f1;
       margin: 55px -55px;
       padding: 55px 0 0 55px;
+      @media screen and (max-width: 550px) {
+        margin: 55px -10px;
+        padding: 55px 0 0 10px;
+      }
       .linkjuice-icon {
         top: 6px;
       }
@@ -728,7 +746,6 @@ pre.editor {
 }
 
 blockquote {
-  // background: url(../img/icons/quote.svg) no-repeat 50px -20px;
   background-size: 100px 100px;
   font-family: 'Museo Slab', 'Helvetica Neue', Helvetica, sans-serif;
   font-weight: 400;

@@ -20,6 +20,10 @@ pre,
   padding: 20px;
   border-radius: 3px;
   font-size: 18px;
+  @media screen and (max-width: 550px) {
+    font-size: 15px;
+    padding: 20px 10px;
+  }
 }
 .highlight {
   white-space: pre;
@@ -30,6 +34,10 @@ pre,
   margin: 0 -55px 25px;
   padding: 25px 20px;
   border-left: 20px solid #35383c;
+  @media screen and (max-width: 550px) {
+    margin: 0 -10px 25px;
+    padding: 20px 10px;
+  }
 }
 .highlight .hll { background-color: #ffc; }
 .highlight .gd { color: #2e3436; background-color: #0e1416; }
