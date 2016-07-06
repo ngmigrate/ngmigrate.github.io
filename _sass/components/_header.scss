@@ -370,6 +370,7 @@ pre.editor {
       padding: 0;
       background: $secondary;
       overflow: hidden;
+      font-family: 'Museo Slab', 'Helvetica Neue', Helvetica, sans-serif;
       &[data-content=visible] {
         display: block;
       }
