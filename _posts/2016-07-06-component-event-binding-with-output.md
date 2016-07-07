@@ -17,7 +17,17 @@ This guide continues on from the previous guide of [passing data into components
 
 <div class="contents" markdown="1">
 * [Angular 1.x](#angular-1x)
+  * [Attribute binding](#attribute-binding)
+  * [Directive Attribute bindings](#directive-attribute-bindings)
+  * [Component Attribute bindings](#component-attribute-bindings)
+  * [Custom attribute binding names](#custom-attribute-binding-names)
+  * [Calling delegate methods](#calling-delegate-methods)
 * [Angular 2](#angular-2)
+  * [Property binding](#property-binding)
+  * [Component property bindings](#component-property-bindings)
+  * [Using EventEmitter](#using-eventemitter)
+  * [Alternative @Output() syntax](#alternative-output-syntax)
+  * [Custom property binding names](#custom-property-binding-names)
 * [Final code](#final-code)
 </div>
 
