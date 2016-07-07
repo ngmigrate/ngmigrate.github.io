@@ -7,7 +7,7 @@
       Author: {{ author.name }}
     </h3>
     <p>
-      {{ author.bio }}
+      {{ author.bio | markdownify }}
     </p>
     <div class="single__author-links">
       <ul class="cf">
