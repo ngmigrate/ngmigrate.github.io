@@ -59,7 +59,7 @@ And that's pretty much it; we have `ng-app` and `angular.module()` as the key in
 
 ### Bootstrapping with angular.bootstrap
 
-The alternative way to bootstrapping in Angular 1.x is through use of the `angular.bootstrap` method, which is a way to manually bootstrap single, or multiple, Angular 1.x applications. It's the same ingredients as `ng-app` essentially calls the `bootstrap` method for us. So using `angular.bootstrap` gives us that exposed method to be able to manually bootstrap our app.
+The alternative way to bootstrapping in Angular 1.x is through use of the `angular.bootstrap` method, which is a way to manually bootstrap single, or multiple Angular 1.x applications. It's the same ingredients as `ng-app` essentially calls the `bootstrap` method for us. So using `angular.bootstrap` gives us that exposed method to be able to manually bootstrap our app.
 
 Again, we'll need an `angular.module()` setup, and then we can bootstrap the application:
 
@@ -81,7 +81,7 @@ angular.bootstrap(document.documentElement, ['app'], {
 
 ### Angular 1.x Root Component
 
-When bootstrapping a "Hello world" in Angular 1.x, we'll need a root element. This element is the root container for our app, which we can create like so using the `.component()` method:
+When bootstrapping a "Hello world" in Angular 1.x, we'll need a root element. This element is the root container for our app, which we can create using the `.component()` method:
 
 {% highlight javascript %}
 // app.component.js
@@ -93,7 +93,7 @@ const myApp = {
   `,
   controller() {
     this.$onInit = function () {
-      this.message = 'Hello world';
+      this.text = 'Hello world';
     };
   }
 };
@@ -106,7 +106,7 @@ That's "Hello world" status in Angular 1.x, so let's continue to Angular 2!
 
 ## Angular 2
 
-When it comes to Angular 2 bootstrapping, there are some notable changes. First, the shift to TypeScript, and as such ES2015 modules, the second is that `ng-app` is no longer with us. There is also a new addition to bootstrapping, an _absolute requirement_ for a root component/container for our app (we don't technically need a `<my-app>` to get Angular 1.x alive and kicking). Let's roll through these and learn how to bootstrap in Angular 2.
+When it comes to Angular 2 bootstrapping, there are some notable changes. Few of them are, shift to TypeScript, using ES2015 modules and `ng-app` is no longer with us. There is also a new addition to bootstrapping, an _absolute requirement_ for a root component/container for our app (we don't technically need a `<my-app>` to get Angular 1.x alive and kicking). Let's roll through these and learn how to bootstrap in Angular 2.
 
 For the purposes of the following code snippets, we're going to assume you've [setup Angular 2](https://angular.io/docs/ts/latest/quickstart.html) to cut out all the boilerplate stuff, we'll focus on the bootstrapping phase.
 
@@ -193,7 +193,7 @@ bootstrap();
 
 Wait, this won't work just yet! The `bootstrap` function expects a Component to be passed as the first argument, so let's import `App` (which we'll create the definition for next) and pass it into `bootstrap`.
 
-> Note how we use 'platform-browser-dynamic' to target the browser platform
+> Note that how we've used 'platform-browser-dynamic' to target the browser platform
 
 {% highlight javascript %}
 // main.ts
