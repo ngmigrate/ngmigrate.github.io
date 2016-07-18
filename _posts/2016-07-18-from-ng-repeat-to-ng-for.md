@@ -17,9 +17,9 @@ The `ng-repeat` Directive in Angular 1.x allows us to iterate over a collection 
 * [Angular 1.x](#angular-1x)
   * [Using ng-repeat](#using-ng-repeat)
   * [Using $index and track by](#using-index-and-track-by)
-  * [Final 1.x code](#final-1-x-code)
+  * [Final 1.x code](#final-1x-code)
 * [Angular 2](#angular-2)
-  * [Using ngFor](#using-ngFor)
+  * [Using ngFor](#using-ngfor)
   * [Using index and trackBy](#using-index-and-trackby)
   * [Final 2 code](#final-2-code)
 </div>
