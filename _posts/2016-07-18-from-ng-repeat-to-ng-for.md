@@ -6,7 +6,7 @@ author: toddmotto
 path: 2016-07-18-from-ng-repeat-to-ng-for.md
 tags: directives
 version: 2.0.0-rc.4
-intro: In this guide you'll learn how use ngFor, the Angular 2 equivalent for ng-repeat.
+intro: In this guide you'll learn how to use ngFor, the Angular 2 equivalent for ng-repeat.
 ---
 
 The `ng-repeat` Directive in Angular 1.x allows us to iterate over a collection of data and print out DOM nodes that respond to that data. If the data changes, the DOM changes as well. In this guide we'll be converting an Angular 1.x `ng-repeat` Directive across to Angular 2's `ngFor` Directive.
