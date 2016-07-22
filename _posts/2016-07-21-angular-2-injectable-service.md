@@ -69,7 +69,7 @@ We simply register the service with `.service()` and it's fully available inside
 {% highlight javascript %}
 class TodoService {
   constructor($http) {
-    this.$http = http;
+    this.$http = $http;
   }
   getTodos() {
     return [{..},{..},{..},{..},{..}];
