@@ -5,7 +5,7 @@ import browserSync from 'browser-sync';
 import child       from 'child_process';
 
 const siteRoot = '_site';
-const jekyllLogger = (buffer) => {
+const jekyllLogger = buffer => {
   buffer.toString().split(/\n/).forEach((message) => util.log('Jekyll: ' + message));
 };
 

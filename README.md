@@ -12,15 +12,35 @@ gem install jekyll
 
 If you need XCode dependencies, follow the [Jekyll installation guide](https://jekyllrb.com/docs/installation/). For Windows, follow the [Windows installation guide](https://jekyllrb.com/docs/windows/#installation).
 
-### Cloning the project
+### Installing the project
 
 If you're submitting an article, you can follow these steps to clone the project, otherwise you can download the `.zip` bundle.
+
+#### Forking
+
+If you're a project collaborator, see the next step. If not, you'll need to `Fork` this repository to your own GitHub account, then `git clone` your copy before submitting a PR:
+
+```
+mkdir ngmigrate
+cd ngmigrate
+git clone https://github.com/YOUR_USERNAME/ngmigrate.github.io.git
+git checkout -b YOUR_BRANCH
+```
+
+Push all changes to your branch, and then submit a PR, we'll review and merge your PR once ready.
+
+#### Project collaborators
+
+If you are a project collaborator, you will have direct commit access, therefore you can run this:
 
 ```
 mkdir ngmigrate
 cd ngmigrate
 git clone https://github.com/ngmigrate/ngmigrate.github.io.git
+git checkout -b YOUR_BRANCH
 ```
+
+Push all changes to that branch, and then submit a PR before merging to `master`.
 
 ### Installing dependencies
 
