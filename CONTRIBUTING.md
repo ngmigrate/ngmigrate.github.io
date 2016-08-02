@@ -20,7 +20,24 @@ Follow the steps to setup this repo [here](README.md) so you can run the build l
 
 ### Writing your guide
 
-Guides follow a simple flow:
+Start by using the provided [TEMPLATE.md](TEMPLATE.md) file provided which includes relevant metadata.
+
+> Read carefully on how to use the `TEMPLATE.md` metadata as these are crucial for hooking everything up.
+
+#### Template metadata
+
+| Property  | Example value                                         | Description |
+|-----------|-------------------------------------------------------|-------------|
+| layout    | post                                                  | Leave this as is |
+| permalink | /bootstrapping-angular-2                              | Fill in the rest of the URL, keep some good keywords in there |
+| title     | Bootstrapping in Angular 2                            | Title of your guide |
+| author    | toddmotto                                             | This needs to align with your `authors.yaml` bio |
+| path      | 2016-07-28-bootstrapping-angular-2.md                 | This path needs to be the _exact_ file name, this allows readers to click "Edit" whilst reading the article |
+| tags      | bootstrapping                                         | A single tag for which category this post is for |
+| version   | 2.0.0-rc.4                                            | The version your article is created and up-to-date with |
+| intro     | In this guide you'll learn how to bootstrap Angular 2 | Simple intro paragraph for the guide |
+
+#### Guides follow a simple flow:
 
 * Angular 1.x
     * Some feature in Angular 1.x
@@ -32,6 +49,10 @@ Guides follow a simple flow:
     * Final code snippet
 
 Use [this guide](http://ngmigrate.telerik.com/from-ng-repeat-to-ng-for) as a reference example for your guide structure.
+
+### Markdown syntax
+
+Follow the same structure as this [reference guide](https://raw.githubusercontent.com/ngmigrate/ngmigrate.github.io/master/_posts/2016-07-18-from-ng-repeat-to-ng-for.md), keeping h1-h6 tags in the same order and format, as well as Jekyll syntax highlighting tags.
 
 ### Code embeds
 
