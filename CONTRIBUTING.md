@@ -20,9 +20,9 @@ Follow the steps to setup this repo [here](README.md) so you can run the build l
 
 ### Writing your guide
 
-Start by using the provided [TEMPLATE.md](TEMPLATE.md) file provided which includes relevant metadata.
+Start by using the provided [TEMPLATE.txt](TEMPLATE.txt) file provided which includes relevant metadata, you'll need to paste this into a new `yourfilename.md` file.
 
-> Read carefully on how to use the `TEMPLATE.md` metadata as these are crucial for hooking everything up.
+> Read carefully on how to use the `TEMPLATE.txt` metadata as these are crucial for hooking everything up.
 
 #### Template metadata
 
@@ -37,7 +37,7 @@ Start by using the provided [TEMPLATE.md](TEMPLATE.md) file provided which inclu
 | version   | 2.0.0-rc.4                                            | The version your article is created and up-to-date with |
 | intro     | In this guide you'll learn how to bootstrap Angular 2 | Simple intro paragraph for the guide |
 
-#### Guides follow a simple flow:
+#### Guide structure/flow
 
 * Angular 1.x
     * Some feature in Angular 1.x
