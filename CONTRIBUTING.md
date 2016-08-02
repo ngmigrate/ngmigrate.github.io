@@ -33,11 +33,15 @@ Guides follow a simple flow:
 
 Use [this guide](http://ngmigrate.telerik.com/from-ng-repeat-to-ng-for) as a reference example for your guide structure.
 
-### Code snippets
+### Code embeds
 
-All code snippets should be using Plunker, you can create a new Plunker, press "New" then "AngularJS" then "2.0.x (TS)" as a base. Please remove anything that isn't relevant to the final code.
+All code embeds should use Plunker, you can create a new Plunker, press "New" then "AngularJS" then "2.0.x (TS)" as a base. Please remove anything that isn't relevant to the final code. Here's how to embed (grab the unique hash from the URL and paste it into `YOUR_URL`):
 
-For Angular 1.x examples, please ensure you're making
+```html
+<iframe src="https://embed.plnkr.co/YOUR_URL/" frameborder="0" border="0" cellspacing="0" cellpadding="0" width="100%" height="250"></iframe>
+```
+
+For Angular 1.x examples, please ensure you're making the JavaScript support non-ES6 browsers, but not as far back as IE9.
 
 ### Adding your "Author" section
 
