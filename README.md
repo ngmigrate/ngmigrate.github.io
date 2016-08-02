@@ -14,7 +14,7 @@ If you need XCode dependencies, follow the [Jekyll installation guide](https://j
 
 ### Installing the project
 
-If you're submitting an article, you can follow these steps to clone the project, otherwise you can download the `.zip` bundle.
+If you're submitting an article, you can follow these steps to clone the project, otherwise you can download the [.zip bundle](https://github.com/ngmigrate/ngmigrate.github.io/archive/master.zip).
 
 #### Forking
 
