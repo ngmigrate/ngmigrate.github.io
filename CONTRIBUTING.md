@@ -20,9 +20,9 @@ Follow the steps to setup this repo [here](README.md) so you can run the build l
 
 ### Writing your guide
 
-Start by using the provided [TEMPLATE.txt](TEMPLATE.txt) file provided which includes relevant metadata, you'll need to paste this into a new `yourfilename.md` file.
+Start by using the provided [TEMPLATE.md](TEMPLATE.md) file provided which includes relevant metadata, you'll need to paste this into a new `yourfilename.md` file.
 
-> Read carefully on how to use the `TEMPLATE.txt` metadata as these are crucial for hooking everything up.
+> Read carefully on how to use the `TEMPLATE.md` metadata as these are crucial for hooking everything up.
 
 #### Template metadata
 
