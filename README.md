@@ -1,3 +1,49 @@
 <img src="https://cloud.githubusercontent.com/assets/1655968/16382145/8170d8bc-3c77-11e6-8dc0-f89fabb3e0ca.jpg" style="max-width: 50%; margin: 0 auto;">
 
-ngMigrate is a project to migrate your Angular 1.x knowledge across to Angular 2.
+## Build this project
+
+### Install jekyll
+
+Ensure `jekyll` is installed:
+
+```
+gem install jekyll
+```
+
+If you need XCode dependencies, follow the [Jekyll installation guide](https://jekyllrb.com/docs/installation/). For Windows, follow the [Windows installation guide](https://jekyllrb.com/docs/windows/#installation).
+
+### Cloning the project
+
+If you're submitting an article, you can follow these steps to clone the project, otherwise you can download the `.zip` bundle.
+
+```
+mkdir ngmigrate
+cd ngmigrate
+git clone https://github.com/ngmigrate/ngmigrate.github.io.git
+```
+
+### Installing dependencies
+
+First, you'll need to make sure you have `gulp` installed:
+
+```
+npm install --global gulp
+```
+
+Next, you'll need to `npm install` the other dev-dependencies, run this from the `ngmigrate` root folder:
+
+```
+npm install
+```
+
+### Running the server
+
+Gulp is setup to make it easier to run all the tasks, to run the project simply run:
+
+```
+gulp
+```
+
+### Ready to make a PR?
+
+Follow our [contribution guidelines](CONTRIBUTING.MD) first.
