@@ -39,7 +39,7 @@ gulp.task('scripts', ['clean'], () => {
     .pipe(plumber())
     .pipe(babel())
     .pipe(addsrc.prepend(paths.libs))
-    .pipe(concat('bundle.js'))
+    .pipe(concat('bundle.min.js'))
     .pipe(uglify())
     .pipe(header(banner, {
       parsed

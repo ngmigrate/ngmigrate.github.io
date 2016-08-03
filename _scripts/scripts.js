@@ -10,4 +10,14 @@
       </a>
     `
   });
+  const topics = document.querySelector('.c-topics__items');
+  const bindTopics = () => {
+    const posts = document.querySelectorAll('.c-topics__list-items li');
+    if (!(posts && posts.length)) {
+      document.querySelector('.c-topics__list-none').style.display = 'inherit';
+    }
+  };
+  if (topics) {
+    bindTopics();
+  }
 })();
