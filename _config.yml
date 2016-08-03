@@ -15,6 +15,6 @@ gems: [jekyll-paginate]
 permalink: /:title
 markdown: kramdown
 include: [_pages]
-exclude: [_site, node_modules, TEMPLATE.txt, CONTRIBUTING.md, CHANGELOG.md, LICENSE, README.md]
+exclude: [_site, _scripts, node_modules, TEMPLATE.txt, CONTRIBUTING.md, CHANGELOG.md, LICENSE, README.md]
 sass:
   style: compressed

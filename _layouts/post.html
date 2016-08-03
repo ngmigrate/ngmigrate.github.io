@@ -44,13 +44,6 @@ layout: page
 <div class="single__comments">
   <div id="disqus_thread"></div>
 </div>
-<script src="js/linkjuice.min.js"></script>
-<script>
-linkjuice.init('.single__content', {
-  icon: '<i class="material-icons">&#xE157;</i>',
-  selectors: ['h2', 'h4', 'h5', 'h3:not(.single__author-name)']
-});
-</script>
 <script>
 function disqus_config() {
   this.page.url = 'http://ngmigrate.com{{ page.url }}';
