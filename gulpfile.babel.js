@@ -24,7 +24,8 @@ const paths = {
   scripts: '_scripts/*.js',
   libs: [
     'node_modules/linkjuice/dist/linkjuice.js'
-  ]
+  ],
+  dist: 'js/'
 };
 
 browserSync.create();
@@ -36,7 +37,7 @@ gulp.task('scripts', ['clean'], () => {
     .pipe(plumber())
     .pipe(concat('bundle.js'))
     .pipe(babel())
-    .pipe(gulp.dest(`${siteRoot}/js/`));
+    .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task('jekyll', () => {
@@ -58,4 +59,4 @@ gulp.task('serve', () => {
 
 gulp.task('watch', () => gulp.watch(paths.scripts, ['scripts']));
 
-gulp.task('default', ['jekyll', 'serve', 'watch']);
+gulp.task('default', ['scripts', 'serve', 'jekyll', 'watch']);
