@@ -8,6 +8,7 @@ import browserSync from 'browser-sync';
 import child       from 'child_process';
 import del         from 'del';
 import fs          from 'fs';
+import hygienist   from 'hygienist-middleware';
 
 const parsed = JSON.parse(fs.readFileSync('./package.json'));
 const siteRoot = '_site';
@@ -49,7 +50,8 @@ gulp.task('serve', () => {
     files: [`${siteRoot}/**`],
     port: 4000,
     server: {
-      baseDir: siteRoot
+      baseDir: siteRoot,
+      middleware: hygienist(siteRoot)
     }
   });
 });

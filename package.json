@@ -28,7 +28,8 @@
     "gulp-header": "^1.8.7",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-util": "^3.0.7"
+    "gulp-util": "^3.0.7",
+    "hygienist-middleware": "^0.1.1"
   },
   "dependencies": {
     "linkjuice": "^1.0.1"
