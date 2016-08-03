@@ -4,11 +4,13 @@ import concat      from 'gulp-concat';
 import header      from 'gulp-header';
 import plumber     from 'gulp-plumber';
 import babel       from 'gulp-babel';
+import uglify      from 'gulp-uglify';
+import addsrc      from 'gulp-add-src';
 import browserSync from 'browser-sync';
 import child       from 'child_process';
+import hygienist   from 'hygienist-middleware';
 import del         from 'del';
 import fs          from 'fs';
-import hygienist   from 'hygienist-middleware';
 
 const parsed = JSON.parse(fs.readFileSync('./package.json'));
 const siteRoot = '_site';
@@ -16,9 +18,9 @@ const jekyllLogger = buffer => {
   buffer.toString().split(/\n/).forEach((message) => util.log(`Jekyll: ${message}`));
 };
 
-const banner = `
-  /*! <%= parsed.name %> v<%= parsed.version %> | (c) ${new Date().getFullYear()} <%= parsed.author %> | <%= parsed.homepage %> */
-`;
+const banner = (
+  `/*! <%= parsed.name %> v<%= parsed.version %> | (c) ${new Date().getFullYear()} <%= parsed.author %> | <%= parsed.homepage %> */\n`
+);
 
 const paths = {
   scripts: '_scripts/*.js',
@@ -30,13 +32,18 @@ const paths = {
 
 browserSync.create();
 
-gulp.task('clean', fn => del(`${siteRoot}/js/`));
+gulp.task('clean', fn => del(paths.dist));
 
 gulp.task('scripts', ['clean'], () => {
-  return gulp.src([...paths.libs, paths.scripts])
+  return gulp.src(paths.scripts)
     .pipe(plumber())
-    .pipe(concat('bundle.js'))
     .pipe(babel())
+    .pipe(addsrc.prepend(paths.libs))
+    .pipe(concat('bundle.js'))
+    .pipe(uglify())
+    .pipe(header(banner, {
+      parsed
+    }))
     .pipe(gulp.dest(paths.dist));
 });
 
