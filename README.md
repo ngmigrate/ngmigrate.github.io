@@ -21,8 +21,6 @@ If you're submitting an article, you can follow these steps to clone the project
 If you're a project collaborator, see the next step. If not, you'll need to `Fork` this repository to your own GitHub account, then `git clone` your copy before submitting a PR:
 
 ```
-mkdir ngmigrate
-cd ngmigrate
 git clone https://github.com/YOUR_USERNAME/ngmigrate.github.io.git
 git checkout -b YOUR_BRANCH
 ```
@@ -34,8 +32,6 @@ Push all changes to your branch, and then submit a PR, we'll review and merge yo
 If you are a project collaborator, you will have direct commit access, therefore you can run this:
 
 ```
-mkdir ngmigrate
-cd ngmigrate
 git clone https://github.com/ngmigrate/ngmigrate.github.io.git
 git checkout -b YOUR_BRANCH
 ```
@@ -50,9 +46,10 @@ First, you'll need to make sure you have `gulp` installed:
 npm install --global gulp
 ```
 
-Next, you'll need to `npm install` the other dev-dependencies, run this from the `ngmigrate` root folder:
+Next, you'll need to `npm install` the other dev-dependencies, run this from the `ngmigrate.github.io` root folder from your `git clone`:
 
 ```
+cd ngmigrate.github.io
 npm install
 ```
 
@@ -65,6 +62,10 @@ gulp
 ```
 
 This will start serving the project from `localhost:4000`, with livereload functionality.
+
+### JavaScript
+
+All JavaScript is located inside `_scripts`, excluding npm dependencies. You can write ES2015 here as the output is transpiled through [Babel](https://babeljs.io) and outputted inside `js/bundle.min.js`, so don't edit that file directly - and remember to push the bundled file so that GitHub pages can compile it from the static directory.
 
 ### Ready to make a PR?
 
