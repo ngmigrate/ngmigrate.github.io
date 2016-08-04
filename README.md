@@ -22,6 +22,7 @@ If you're a project collaborator, see the next step. If not, you'll need to `For
 
 ```
 git clone https://github.com/YOUR_USERNAME/ngmigrate.github.io.git
+cd ngmigrate.github.io
 git checkout -b YOUR_BRANCH
 ```
 
@@ -32,7 +33,8 @@ Push all changes to your branch, and then submit a PR, we'll review and merge yo
 If you are a project collaborator, you will have direct commit access, therefore you can run this:
 
 ```
-git clone https://github.com/ngmigrate/ngmigrate.github.io.git
+git clone git@github.com:ngmigrate/ngmigrate.github.io.git
+cd ngmigrate.github.io
 git checkout -b YOUR_BRANCH
 ```
 
