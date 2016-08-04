@@ -6,7 +6,6 @@ description: >
 baseurl: ""
 url: "https://ngmigrate.github.io"
 fixedNav: 'true' # true or false
-theme: green # green, blue, orange, purple, grey
 twitterUsername: toddmotto
 githubUsername: toddmotto
 paginate: 2
