@@ -12,3 +12,10 @@ toddmotto:
   github: toddmotto
   gravatar: /img/authors/todd-motto.jpg
   bio: "Todd is a Developer Advocate at [Telerik](http://telerik.com), spreading the good word of [Kendo UI](http://www.telerik.com/kendo-ui), [NativeScript](https://www.nativescript.org) and [Angular](https://angular.io) 1 & 2. You can follow him on Twitter for questions, or even requests about this guide."
+simpulton:
+  name: Lukas Ruebbelke
+  twitter: simpulton
+  web: http://onehungrymind.com
+  github: simpulton
+  gravatar: /img/authors/lukas-ruebbelke.png
+  bio: "Developer. Hacker. Community backer. Author and blogger. Console logger."
