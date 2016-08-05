@@ -71,4 +71,4 @@ All JavaScript is located inside `_scripts`, excluding npm dependencies. You can
 
 ### Ready to make a PR?
 
-Follow our [contribution guidelines](CONTRIBUTING.MD) first.
+Follow our [contribution guidelines](CONTRIBUTING.md) first.
