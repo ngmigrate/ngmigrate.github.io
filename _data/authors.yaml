@@ -12,3 +12,10 @@ toddmotto:
   github: toddmotto
   gravatar: /img/authors/todd-motto.jpg
   bio: "Todd is a Developer Advocate at [Telerik](http://telerik.com), spreading the good word of [Kendo UI](http://www.telerik.com/kendo-ui), [NativeScript](https://www.nativescript.org) and [Angular](https://angular.io) 1 & 2. You can follow him on Twitter for questions, or even requests about this guide."
+burkeholland:
+  name: Burke Holland
+  twitter: burkeholland
+  web: https://burkeholland.com
+  github: burkeholland
+  gravatar: /img/authors/burke-holland.png
+  bio: "Burke works for [Telerik](http://telerik.com) as a Developer Advocate focusing on Kendo UI. He enjoys working with and meeting developers who are building mobile apps with jQuery / HTML5 and loves to hack on social API's."

@@ -9,7 +9,7 @@ version: 2.0.0-rc.4
 intro: In this guide you'll learn how to use the new pipes functionality in Angular 2 that replaces filters from Angular 1.
 ---
 
-Filters allow a developer to transform or format an item or collection of items in a view without having to actually alter the format or value of the unerlying bound item(s) themselves. An example of this would be formatting date values so that they appear in a certain format when rendered, but are stored in a different format in the application code. 
+Filters allow a developer to transform or format an item or collection of items in a view without having to actually alter the format or value of the underlying bound item(s) themselves. An example of this would be formatting date values so that they appear in a certain format when rendered, but are stored in a different format in the application code.
 
 Angular 2 has the same filter functionality as Angular 1, and it's now referred to as "Pipes". In this guide, we'll review how to use the built-in filters in Angular 1, and which of those same filters are available as pipes in Angular 2.
 
@@ -23,13 +23,13 @@ Angular 2 has the same filter functionality as Angular 1, and it's now referred 
 * [Angular 2](#angular-2)
   * [OrderBy and Filter pipes](#orderby-and-filter-pipes)
   * [Final 2 code](#final-2-code)
-</div> 
+</div>
 
 ## Angular 1.x
 
-In Angular 1.x, we can create a filter by using the `|` character when we want to transform a particular value in a template. 
+In Angular 1.x, we can create a filter by using the `|` character when we want to transform a particular value in a template.
 
-Filters in Angular 1 are defined simply by putting a `|` on the end of a bound expression or a looping construct - usually `ng-repeat`. That character - the `|` - is called a "pipe", hence the new name "Pipe" in Angular 2. 
+Filters in Angular 1 are defined simply by putting a `|` on the end of a bound expression or a looping construct - usually `ng-repeat`. That character - the `|` - is called a "pipe", hence the new name "Pipe" in Angular 2.
 
 For example, suppose we have a list of groceries, and we want to display each grocery on the page. You might imagine that the controller would look something like this...
 
@@ -97,11 +97,11 @@ It is also possible to assign filters at the collection level. One of the most p
 const app = {
   template: `
     <div>
-      Grocery selected: {%raw }{{ $ctrl.selectedGrocery.label }}{% endraw }
+      Grocery selected: {% raw %}{{ $ctrl.selectedGrocery.label }}{% endraw %}
       <ul>
         <li ng-repeat="grocery in $ctrl.groceries | orderBy: 'label'">
           <a href="" ng-click="$ctrl.selectGrocery(grocery);">
-            {%raw }{{ grocery.label | uppercase }}{% end raw }
+            {% raw %}{{ grocery.label | uppercase }}{% endraw %}
           </a>
         </li>
       </ul>
@@ -115,13 +115,14 @@ const app = {
 
 Model-bound values - such as collections, can also be filtered in Angular 1.x using, well, Filters. This is another extremely useful feature in Angular 1. In the above example, we might want to filter the list while a user types in a filter box. Angular allows us to pass a model value to the filter which automatically gets applied to the collection.
 
+{% highlight javascript %}
 const app = {
   template: `
     <div>
       Filter Groceries: <input ng-model="$ctrl.searchText">
       <ul>
         <li ng-repeat="grocery in $ctrl.groceries | orderBy: 'label' | filter: $ctrl.searchText">
-          {{ grocery.label | uppercase }}
+          {% raw %}{{ grocery.label | uppercase }}{% endraw %}
         </li>
       </ul>
     </div>
@@ -134,6 +135,7 @@ const app = {
 angular
   .module('app')
   .component('app', app);
+{% endhighlight %}
 
 Notice in the above example that multiple filters can be chained together using pipes. Pretty nifty, right? We're just scratching the surface of filters here, but if you've used  Angular 1.x, it's likely that you are already aware of the importance of filters in Angular applications. Filters are incredibly powerful and a good understanding of how to use them will exponentially increase your ability to effectively use Angular in your apps.
 
@@ -159,7 +161,7 @@ interface Grocery {
     <div>
       <ul>
         <li *ngFor="let grocery of groceries">
-          {{ grocery.label | uppercase }}
+          {% raw %}{{ grocery.label | uppercase }}{% endraw %}
         </li>
       </ul>
     </div>
@@ -233,9 +235,9 @@ export default class App {
       id: 7, label: 'Bacon'
     }];
   }
-  
+
   get orderedGroceries {
-    var filtered = this.groceries.filter((grocery) => { 
+    var filtered = this.groceries.filter((grocery) => {
       if (this.searchTerm && this.searchTerm.length > 0) {      
         return grocery.label.toUpperCase().indexOf(this.searchTerm.toUpperCase(), 0) > -1;
       }
@@ -243,13 +245,13 @@ export default class App {
         return true;
       }
     });
-    
+
     return filtered.sort((a, b) => {
       var textA = a.label.toUpperCase();
       var textB = b.label.toUpperCase();
       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;  
     });
-  } 
+  }
 }
 {% endhighlight %}
 
