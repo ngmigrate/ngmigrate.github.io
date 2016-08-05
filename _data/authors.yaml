@@ -19,3 +19,10 @@ simpulton:
   github: simpulton
   gravatar: /img/authors/lukas-ruebbelke.png
   bio: "Developer. Hacker. Community backer. Author and blogger. Console logger. Angular trainer and course instructor."
+burkeholland:
+  name: Burke Holland
+  twitter: burkeholland
+  web: http://a.shinynew.me
+  github: burkeholland
+  gravatar: /img/authors/burke-holland.png
+  bio: "Burke works for [Telerik](http://telerik.com) as a Developer Advocate focusing on Kendo UI. He enjoys working with and meeting developers who are building mobile apps with jQuery / HTML5 and loves to hack on social API's."
