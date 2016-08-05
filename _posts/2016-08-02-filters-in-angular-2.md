@@ -1,9 +1,9 @@
 ---
 layout: post
 permalink: /angular-2-filters
-title: Creating Filters In Angular 2
+title: Using Pipes In Angular 2
 author: burkeholland
-path: 2016-04-02-filters-in-angular-2.md
+path: 2016-08-02-pipes-in-angular-2.md
 tags: filters
 version: 2.0.0-rc.4
 intro: In this guide you'll learn how to use the new pipes functionality in Angular 2 that replaces filters from Angular 1.
@@ -27,9 +27,9 @@ Angular 2 has the same filter functionality as Angular 1, and it's now referred 
 
 ## Angular 1.x
 
-In Angular 1.x, we can create a filter by using the `|` character when we want to transform a paticular value in a template. 
+In Angular 1.x, we can create a filter by using the `|` character when we want to transform a particular value in a template. 
 
-Filters in Angular 1 are defined simply by putting a `|` on the end of a looping construct - usually `ng-for`. That character - the `|` - is called a "pipe", hence the new name "Pipe" in Angular 2. 
+Filters in Angular 1 are defined simply by putting a `|` on the end of a bound expression or a looping construct - usually `ng-repeat`. That character - the `|` - is called a "pipe", hence the new name "Pipe" in Angular 2. 
 
 For example, suppose we have a list of groceries, and we want to display each grocery on the page. You might imagine that the controller would look something like this...
 
@@ -40,7 +40,7 @@ const app = {
       Grocery selected: {{ $ctrl.selectedGrocery.label }}
       <ul>
         <li ng-repeat="grocery in $ctrl.groceries">
-          {{ grocery.label }}
+          {% raw %}{{ grocery.label }}{% endraw %}
         </li>
       </ul>
     </div>
@@ -78,7 +78,7 @@ const app = {
       Grocery selected: {{ $ctrl.selectedGrocery.label }}
       <ul>
         <li ng-repeat="grocery in $ctrl.groceries">
-          {{ grocery.label | uppercase }}
+          {% raw %}{{ grocery.label | uppercase }}{% endraw %}
         </li>
       </ul>
     </div>
@@ -97,11 +97,11 @@ It is also possible to assign filters at the collection level. One of the most p
 const app = {
   template: `
     <div>
-      Grocery selected: {{ $ctrl.selectedGrocery.label | orderBy: 'label' }}
+      Grocery selected: {%raw }{{ $ctrl.selectedGrocery.label }}{% endraw }
       <ul>
-        <li ng-repeat="grocery in $ctrl.groceries">
+        <li ng-repeat="grocery in $ctrl.groceries | orderBy: 'label'">
           <a href="" ng-click="$ctrl.selectGrocery(grocery);">
-            {{ grocery.label | uppercase }}
+            {%raw }{{ grocery.label | uppercase }}{% end raw }
           </a>
         </li>
       </ul>
@@ -113,7 +113,7 @@ const app = {
 };
 {% endhighlight %}
 
-Elements can also be filtered in a filter. This is another extremely useful feature in Angular 1. In the above example, we might want to filter the list while a user types in a filter box. Angular allows us to pass a model value to the filter which automatically gets applied to the collection.
+Model-bound values - such as collections, can also be filtered in Angular 1.x using, well, Filters. This is another extremely useful feature in Angular 1. In the above example, we might want to filter the list while a user types in a filter box. Angular allows us to pass a model value to the filter which automatically gets applied to the collection.
 
 const app = {
   template: `
@@ -143,7 +143,7 @@ Notice in the above example that multiple filters can be chained together using 
 
 ## Angular 2
 
-As mentioned earlier, **filters are now known as pipes**. They are very similar to how filters in Angular 2 worked, with some serious caveats that we'll discuss here shortly. Angular 2 has built-in pipes just like the filters in Angular 1. For instance, our uppercase filter from the previous example "just works" in Angular 2.
+As mentioned earlier, **filters are now known as pipes**. They are very similar to how filters in Angular 1.x worked, with some serious caveats that we'll discuss here shortly. Angular 2 has built-in pipes just like the built-in filters in Angular 1. For instance, our uppercase filter from the previous example "just works" in Angular 2.
 
 {% highlight javascript %}
 import {Component} from '@angular/core';
