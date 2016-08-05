@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /angular-2-filters
+permalink: /using-angular-2-pipes-filters
 title: Using Pipes in Angular 2
 author: burkeholland
 path: 2016-08-02-pipes-in-angular-2.md
