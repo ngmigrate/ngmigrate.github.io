@@ -207,7 +207,7 @@ First, instead of a looping over the actual array, we can loop over a copy that 
      Search Term: <input type="text" [(ngModel)]="searchTerm">
       <ul>
         <li *ngFor="let grocery of orderedGroceries">
-          {{ grocery.label | uppercase }}
+          {% raw %}{{ grocery.label | uppercase }}{% endraw %}
         </li>
       </ul>
     </div>
