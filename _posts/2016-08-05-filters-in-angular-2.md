@@ -3,7 +3,7 @@ layout: post
 permalink: /using-angular-2-pipes-filters
 title: Using Pipes in Angular 2
 author: burkeholland
-path: 2016-08-02-pipes-in-angular-2.md
+path: 2016-08-05-pipes-in-angular-2.md
 tags: filters
 version: 2.0.0-rc.4
 intro: In this guide you'll learn how to use the new pipes functionality in Angular 2 that replaces filters from Angular 1.
