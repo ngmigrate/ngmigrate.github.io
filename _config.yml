@@ -4,8 +4,7 @@ email: todd@toddmotto.com
 description: >
   ngMigrate is a project to migrate your existing Angular 1 knowledge into Angular 2.
 baseurl: ""
-url: "https://ngmigrate.github.io"
-fixedNav: 'true' # true or false
+url: "http://ngmigrate.telerik.com"
 twitterUsername: toddmotto
 githubUsername: toddmotto
 paginate: 2
