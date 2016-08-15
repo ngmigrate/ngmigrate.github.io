@@ -5,8 +5,6 @@ description: >
   ngMigrate is a project to migrate your existing Angular 1 knowledge into Angular 2.
 baseurl: ""
 url: "http://ngmigrate.telerik.com"
-fixedNav: 'true' # true or false
-theme: green # green, blue, orange, purple, grey
 twitterUsername: toddmotto
 githubUsername: toddmotto
 paginate: 2
