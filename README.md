@@ -60,7 +60,7 @@ npm install
 Gulp is setup to make it easier to run all the tasks, to run the project simply run:
 
 ```
-gulp
+npm start
 ```
 
 This will start serving the project from `localhost:4000`, with livereload functionality.
