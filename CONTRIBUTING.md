@@ -74,7 +74,7 @@ To get your author bio and links showing up on your migration guide(s), follow t
 
 ### Submitting a PR
 
-Submit a PR to our `master` branch, we'll review, make any necessary additions if needed and then merge once ready. After final review, please squash all commits before we merge.
+Submit a PR to a new branch, we'll review, make any necessary additions if needed and then merge once ready. After final review, please squash all commits before we merge.
 
 ## Issues and Bugs
 
