@@ -32,7 +32,7 @@ const paths = {
 
 browserSync.create();
 
-gulp.task('clean', fn => del(paths.dist));
+gulp.task('clean', fn => del([paths.dist, siteRoot], fn));
 
 gulp.task('scripts', ['clean'], () => {
   return gulp.src(paths.scripts)

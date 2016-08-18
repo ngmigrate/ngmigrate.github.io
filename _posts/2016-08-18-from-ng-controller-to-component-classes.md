@@ -3,9 +3,9 @@ layout: post
 permalink: /from-ng-controller-to-component-classes
 title: From ng-controller to Component Classes
 author: simpulton
-path: 2016-08-04-from-ng-controller-to-component-classes.md
+path: 2016-08-18-from-ng-controller-to-component-classes.md
 tags: controllers
-version: 2.0.0-rc.4
+version: 2.0.0-rc.5
 intro: In this guide you'll learn how to start migrating Angular 1 controllers into Angular 2 component classes.
 ---
 
