@@ -26,3 +26,10 @@ burkeholland:
   github: burkeholland
   gravatar: /img/authors/burke-holland.png
   bio: "Burke works for [Telerik](http://telerik.com) as a Developer Advocate focusing on Kendo UI. He enjoys working with and meeting developers who are building mobile apps with jQuery / HTML5 and loves to hack on social API's."
+jeremylikness:
+  name: Jeremy Likness
+  twitter: jeremylikness
+  web: http://csharperimage.jeremylikness.com/
+  github: jeremylikness
+  gravatar: /img/authors/jeremy-likness.png 
+  bio: "Jeremy is Director of Application Development for [iVision](http://bit.ly/ivisionappdev), a Telerik Developer Expert, and a 7-year Microsoft MVP. He is a prolific author and speaker and has helped deliver enterprise Angular apps since it was in beta."
