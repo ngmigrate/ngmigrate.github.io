@@ -71,8 +71,8 @@ We create the filter function and just pass it off to the `.filter()` API to get
 Let's get the ball rolling with our custom ordinal filter, I've already written the logic to implement it, and we don't need to focus on the internal details, just the Angular API. So, here's the function for our
 
 {% highlight javascript %}
-function ordinal() {
-  return function(value) {
+const ordinal = () => {
+  return value => {
     var suffix = '';
     var last = value % 10;
     var specialLast = value % 100;
@@ -134,13 +134,13 @@ You can check out the full compiled out demo below, but next we'll dive into pas
 Passing arguments to filters is generally how we'll use them, we want to ensure filters are filtering based on something dynamic. With the `.filter()` API, we can specify further function arguments to be able to pass more information into filters:
 
 {% highlight javascript %}
-function ordinal() {
+const ordinal = () => {
   // passing another argument
-  return function(value, anotherValue) {
+  return (value, anotherValue) => {
     // do something with `value` and `anotherValue`
     // and return a new value
   };
-}
+};
 
 angular
   .module('app')
