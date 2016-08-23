@@ -47,21 +47,20 @@ Into this:
 Therefore, our ordinal filter will return a new value with the correct suffix to the number value passed into the filter. Angular's `.filter()` API expects a function, that the first argument is the value the filter was bound to, and returns a new value, for example to demonstrate creating an `uppercase` filter:
 
 {% highlight javascript %}
-function uppercase() {
+const uppercase = () => {
   // filter function closure
   // `value` is passed to us
-  return function (value) {
+  return value => {
     // do something with the `value`
     var newValue = value.toUpperCase();
     // return a new value
     return newValue;
   };
-}
+};
 
 angular
   .module('app')
   .filter('uppercase', uppercase);
-
 {% endhighlight %}
 
 We create the filter function and just pass it off to the `.filter()` API to get it registered.
@@ -90,7 +89,7 @@ const ordinal = () => {
     }
     return value + suffix;
   };
-}
+};
 
 angular
   .module('app')
