@@ -100,7 +100,6 @@ With the `contacts` module now available, we can update the `AppComponent` to in
 const AppComponent = {
   template: `
     <h1>Root Component</h1>
-    <hr>
     <contacts></contaccts>
   `
 };
