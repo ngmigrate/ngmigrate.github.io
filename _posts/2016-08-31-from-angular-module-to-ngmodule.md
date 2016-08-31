@@ -100,7 +100,7 @@ With the `contacts` module now available, we can update the `AppComponent` to in
 const AppComponent = {
   template: `
     <h1>Root Component</h1>
-    <contacts></contaccts>
+    <contacts></contacts>
   `
 };
 
@@ -157,8 +157,8 @@ And instead of bootstrapping our top-level component directly, we will instead b
 
 {% highlight javascript %}
 // main.ts
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app.module';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {AppModule} from './app.module';
 
 platformBrowserDynamic().bootstrapModule(AppModule);
 {% endhighlight %}
@@ -179,11 +179,15 @@ As with the first example, we will introduce a contacts feature in the form of a
 
 {% highlight javascript %}
 // contacts.component.ts
-import {Component} from '@angular/core'
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'contacts',
-  template: `<h3>Contacts go here.</h3>`
+  template: `
+    <h3>
+      Contacts go here.
+    </h3>
+  `
 })
 export class ContactsComponent { }
 {% endhighlight %}
