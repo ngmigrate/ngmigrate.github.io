@@ -5,7 +5,7 @@ title: From angular.module to ngModule
 author: toddmotto
 path: 2016-08-31-from-angular-module-to-ngmodule.md
 tags: modules
-version: 2.0.0-rc.5
+version: 2.0.0-rc.6
 intro: In this guide, you'll learn how angular.module in Angular 1.x compares to ngModule in Angular 2.
 ---
 

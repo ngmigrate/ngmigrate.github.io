@@ -5,7 +5,7 @@ title: Bootstrapping in the browser with Angular 2
 author: toddmotto
 path: 2016-07-06-bootstrapping-in-angular-2.md
 tags: bootstrapping
-version: 2.0.0-rc.4
+version: 2.0.0-rc.6
 intro: In this guide you'll learn how to bootstrap an Angular 2 application.
 ---
 
@@ -16,10 +16,12 @@ Angular 1.x allows us to bootstrap our applications in two different ways, using
 <div class="contents" markdown="1">
 * [Angular 1.x](#angular-1x)
     * [Bootstrapping with ng-app](#bootstrapping-with-ng-app)
+    * [Modules with angular.module](#modules-with-angularmodule)
     * [Bootstrapping with angular.bootstrap](#bootstrapping-with-angularbootstrap)
     * [Root component](#angular-1x-root-component)
 * [Angular 2](#angular-2)
     * [HTML and root element](#html-and-root-element)
+    * [Modules with @NgModule](#modules-with-ngmodule)
     * [Bootstrapping](#bootstrapping)
     * [Root Component](#angular-2-root-component)
 * [Final code](#final-code)
@@ -47,6 +49,8 @@ Most Angular 1.x apps start with `ng-app`, which typically sits on the `<html>` 
   </body>
 </html>
 {% endhighlight %}
+
+### Modules with angular.module
 
 For `ng-app` to work, however, we actually need to create a "module". A module is essentially a container for logic that's specific to something in our application, such as a feature. The module _name_ needs to correspond to the value passed into `ng-app`, which in this case is just `"app"`. So we create the relevant module name as such:
 
@@ -106,7 +110,7 @@ That's "Hello world" status in Angular 1.x, so let's continue to Angular 2!
 
 ## Angular 2
 
-When it comes to Angular 2 bootstrapping, there are some notable changes. Few of them are, shift to TypeScript, using ES2015 modules and `ng-app` is no longer with us. There is also a new addition to bootstrapping, an _absolute requirement_ for a root component/container for our app (we don't technically need a `<my-app>` to get Angular 1.x alive and kicking). Let's roll through these and learn how to bootstrap in Angular 2.
+When it comes to Angular 2 bootstrapping, there are some notable changes. Few of them are, shift to TypeScript, using ES2015 modules and `ng-app` is no longer with us, though the concept of "modules" is still prevalent through the `@NgModule` decorator. There is also another new addition to bootstrapping, an _absolute requirement_ for a root component/container for our app (we don't technically need a `<my-app>` to get Angular 1.x alive and kicking). Let's roll through these and learn how to bootstrap in Angular 2.
 
 For the purposes of the following code snippets, we're going to assume you've [setup Angular 2](https://angular.io/docs/ts/latest/quickstart.html) to cut out all the boilerplate stuff, we'll focus on the bootstrapping phase.
 
@@ -129,35 +133,32 @@ Just like with Angular 1.x, we need some HTML setup with our scripts, of which I
       typescriptOptions: {
         emitDecoratorMetadata: true
       },
+      paths: {
+        'npm:': 'https://unpkg.com/'
+      },
       map: {
-        app: "./src",
-        '@angular': 'https://npmcdn.com/@angular',
-        'rxjs': 'https://npmcdn.com/rxjs@5.0.0-beta.6'
+        'app': './src',
+        '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+        '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+        '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+        '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+        '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+        '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+        '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+        '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+        '@angular/core/testing': 'npm:@angular/core/bundles/core-testing.umd.js',
+        '@angular/common/testing': 'npm:@angular/common/bundles/common-testing.umd.js',
+        '@angular/compiler/testing': 'npm:@angular/compiler/bundles/compiler-testing.umd.js',
+        '@angular/platform-browser/testing': 'npm:@angular/platform-browser/bundles/platform-browser-testing.umd.js',
+        '@angular/platform-browser-dynamic/testing': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
+        '@angular/http/testing': 'npm:@angular/http/bundles/http-testing.umd.js',
+        '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',
+        'rxjs': 'npm:rxjs'
       },
       packages: {
         app: {
           main: './main.ts',
           defaultExtension: 'ts'
-        },
-        '@angular/core': {
-          main: 'bundles/core.umd.js',
-          defaultExtension: 'js'
-        },
-        '@angular/compiler': {
-          main: 'bundles/compiler.umd.js',
-          defaultExtension: 'js'
-        },
-        '@angular/common': {
-          main: 'bundles/common.umd.js',
-          defaultExtension: 'js'
-        },
-        '@angular/platform-browser-dynamic': {
-          main: 'bundles/platform-browser-dynamic.umd.js',
-          defaultExtension: 'js'
-        },
-        '@angular/platform-browser': {
-          main: 'bundles/platform-browser.umd.js',
-          defaultExtension: 'js'
         },
         rxjs: {
           defaultExtension: 'js'
@@ -181,29 +182,59 @@ You'll ideally want to use [System.js](https://github.com/systemjs/systemjs) or 
 
 Note how we're also using `<my-app>` just like in the Angular 1.x example too, which gives us the absolute base we need to get started with Angular.
 
+### Modules with @NgModule
+
+The next thing we need to do it create an Angular 2 module with `@NgModule`. This is a high-level decorator that marks as the application's entry point for that specific module, similar to `angular.module()` in Angular 1.x. For this, we'll assume creation of `module.ts`:
+
+{% highlight javascript %}
+// module.ts
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import AppComponent from './app';
+
+@NgModule({
+  imports: [BrowserModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+{% endhighlight %}
+
+From the above, we've imported `NgModule` from the Angular core, and using the decorator we add the necessary metadata through `imports`, `declarations` and `bootstrap`. We can also specify `providers` inside the decorator for the injector. We also now import the `BrowserModule` and tell `@NgModule` this is the module we want to use. For more on `@NgModule`, check the [from angular.module to ngModule](/from-angular-module-to-ngModule) migration guide.
+
+You'll also see we've imported the `AppComponent`, which is what we need setup in the "Root Component" section shortly.
+
 ### Bootstrapping
 
 To bootstrap our Angular 2 app, we need to first import the necessities from `@angular`, and then call the `bootstrap` function:
 
 {% highlight javascript %}
 // main.ts
-import {bootstrap} from '@angular/platform-browser-dynamic';
-bootstrap();
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+platformBrowserDynamic();
 {% endhighlight %}
-
-Wait, this won't work just yet! The `bootstrap` function expects a Component to be passed as the first argument, so let's import `App` (which we'll create the definition for next) and pass it into `bootstrap`.
 
 > Note that how we've used 'platform-browser-dynamic' to target the browser platform
 
+Wait, this won't work just yet! The `platformBrowserDynamic` function returns a few new methods on the `prototype` chain that we can invoke, the one we need is `bootstrapModule`, so let's get that called:
+
 {% highlight javascript %}
 // main.ts
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import App from './app';
-
-bootstrap(App);
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+platformBrowserDynamic().bootstrapModule();
 {% endhighlight %}
 
-The `bootstrap` function we import gets invoked, and we pass in the `App` reference, of which is going to be our "Root component" just like we saw in our Angular 1.x example.
+Finally, we need to import our exported `AppModule` decorated by `@NgModule`, and pass it into the `bootstrapModule();` method call:
+
+{% highlight javascript %}
+// main.ts
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {AppModule} from './module';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+{% endhighlight %}
+
+The `bootstrapModule` function we import gets invoked, and we pass in the `AppComponent` reference, of which is going to be our "Root component" just like we saw in our Angular 1.x example.
 
 ### Root Component
 
