@@ -95,7 +95,7 @@ With our controller in place, we will update our template to utilize our new cre
     <hr>
     <button type="button" class="btn btn-primary btn-lg"
         ng-click="$ctrl.toggleVisibility()">
-      {{$ctrl.getLabel()}}
+      {% raw %}{{ $ctrl.getLabel() }}{% endraw %}
     </button>
     <div ng-if="$ctrl.isVisible" class="alert alert-success">
       Animate good times! Come on!
@@ -127,7 +127,7 @@ const AppComponent = {
     <hr>
     <button type="button" class="btn btn-primary btn-lg"
         ng-click="$ctrl.toggleVisibility()">
-      {{$ctrl.getLabel()}}
+      {% raw %}{{ $ctrl.getLabel() }}{% endraw %}
     </button>
     <div ng-if="$ctrl.isVisible" class="alert alert-success">
       Animate good times! Come on!
@@ -290,7 +290,7 @@ We will update our template to call `toggleVisiblity` when the button is clicked
     <button type="button"
         class="btn btn-primary btn-lg"
         (click)="toggleVisibility()">
-      {{getLabel()}}
+      {% raw %}{{ getLabel() }}{% endraw %}
     </button>
     <div *ngIf="visibility=='shown'"
         class="alert alert-success">
@@ -317,7 +317,7 @@ import { Component } from '@angular/core';
     <button type="button"
         class="btn btn-primary btn-lg"
         (click)="toggleVisibility()">
-      {{getLabel()}}
+      {% raw %}{{ getLabel() }}{% endraw %}
     </button>
     <div *ngIf="visibility=='shown'"
         class="alert alert-success">
@@ -440,9 +440,9 @@ import { Component, trigger, state, animate, transition, style } from '@angular/
     <button type="button"
         class="btn btn-primary btn-lg"
         (click)="toggleVisibility()">
-      {{getLabel()}}
+      {% raw %}{{ getLabel() }}{% endraw %}
     </button>
-      {{getLabel()}}
+      {% raw %}{{ getLabel() }}{% endraw %}
     </button>
     <div [@visibility]="visibility" class="alert alert-success">
       Animate good times! Come on!
