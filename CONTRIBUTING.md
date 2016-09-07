@@ -34,7 +34,7 @@ Start by using the provided [TEMPLATE.txt](TEMPLATE.txt) file provided which inc
 | author    | toddmotto                                             | This needs to align with your `authors.yaml` bio |
 | path      | 2016-07-28-bootstrapping-angular-2.md                 | This path needs to be the _exact_ file name, this allows readers to click "Edit" whilst reading the article |
 | tags      | bootstrapping                                         | A single tag for which category this post is for |
-| version   | 2.0.0-rc.4                                            | The version your article is created and up-to-date with |
+| version   | 2.0.0-rc.6                                            | The version your article is created and up-to-date with |
 | intro     | In this guide you'll learn how to bootstrap Angular 2 | Simple intro paragraph for the guide |
 
 #### Guide structure/flow
