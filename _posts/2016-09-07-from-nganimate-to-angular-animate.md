@@ -162,7 +162,7 @@ We still need to define the application, but this happens outside of the existin
 
 Within our `animations.css` file, we are going to define our `fade` class and set it to have 100% opacity.
 
-{% endhighlight %}css
+{% highlight css %}
 .fade {
   opacity: 1;
 }
@@ -170,7 +170,7 @@ Within our `animations.css` file, we are going to define our `fade` class and se
 
 Animations in Angular 1.x operate on the concept of animation hooks that we can use to define behavior when certain events happen. You can read about all of these hooks in the [Angular 1.x documentation](https://docs.angularjs.org/api/ngAnimate), but the two we are going to use for our example are `ng-enter` and `ng-leave`. We can define custom styles for each lifecycle hook and its current state. To illustrate this, we will set up the animation transition for both hooks to be `transition:0.5s linear all` as seen in the code below.
 
-{% endhighlight %}css
+{% highlight css %}
 .fade {
   opacity: 1;
 }
@@ -182,7 +182,7 @@ Animations in Angular 1.x operate on the concept of animation hooks that we can 
 
 When an element enters the DOM, the `ng-enter` class establishes the animation starting point and then it transitions to whatever style we define in the `ng-enter-active` style. In this case, we are starting with an `opacity` of `0` and when `ng-enter` has been actively applied aka `ng-enter-active`, it will have an `opacity` of `1`.
 
-{% endhighlight %}css
+{% highlight css %}
 .fade.ng-enter {
   opacity:0;
 }
@@ -193,7 +193,7 @@ When an element enters the DOM, the `ng-enter` class establishes the animation s
 
 When an element leaves the DOM, the process is the same, but we want to reverse the animation. We will start the leave animation with an `opacity` of `1` and will complete the animation with an `opacity` of `0`.
 
-{% endhighlight %}css
+{% highlight css %}
 .fade.ng-leave {
   opacity:1;
 }
@@ -204,7 +204,7 @@ When an element leaves the DOM, the process is the same, but we want to reverse 
 
 You will notice that the enter and leave animations are exactly the same but in reverse. If we desired, we could stack our classes like so to make it a bit more concise.
 
-{% endhighlight %}css
+{% highlight css %}
 .fade {
   opacity: 1;
 }
