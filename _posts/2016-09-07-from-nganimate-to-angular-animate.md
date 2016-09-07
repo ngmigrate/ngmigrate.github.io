@@ -13,6 +13,7 @@ Originally, Angular 1.x was created to help developers build enterprise applicat
 
 ## Table of Contents
 
+<div class="contents" markdown="1">
 * [Angular 1.x](#angular-1x)
   * [The Angular 1.x Application](#the-angular-1x-application)
   * [Adding an Angular 1.x Animation](#adding-an-angular-1x-animation)
@@ -21,6 +22,7 @@ Originally, Angular 1.x was created to help developers build enterprise applicat
   * [The Angular 2 Application](#the-angular-2-application)
   * [Adding an Angular 2 Animation](#adding-an-angular-2-animation)
   * [Final 2 code](#final-2-code)
+</div>
 
 ## Angular 1.x
 
