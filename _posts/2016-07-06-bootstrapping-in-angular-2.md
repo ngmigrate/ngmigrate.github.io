@@ -123,10 +123,10 @@ Just like with Angular 1.x, we need some HTML setup with our scripts, of which I
 <html>
   <head>
     <title>Angular 2</title>
-    <script src="//npmcdn.com/zone.js@0.6.12/dist/zone.js"></script>
-    <script src="//npmcdn.com/reflect-metadata@0.1.3/Reflect.js"></script>
-    <script src="//npmcdn.com/systemjs@0.19.31/dist/system.js"></script>
-    <script src="//npmcdn.com/typescript@1.8.10/lib/typescript.js"></script>
+    <script src="//unpkg.com/zone.js@0.6.12/dist/zone.js"></script>
+    <script src="//unpkg.com/reflect-metadata@0.1.3/Reflect.js"></script>
+    <script src="//unpkg.com/systemjs@0.19.31/dist/system.js"></script>
+    <script src="//unpkg.com/typescript@1.8.10/lib/typescript.js"></script>
     <script>
     System.config({
       transpiler: 'typescript',
