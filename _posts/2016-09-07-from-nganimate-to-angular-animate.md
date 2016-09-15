@@ -9,7 +9,9 @@ version: 2.0.0-rc.6
 intro: In this guide, you'll learn how to convert a simple CSS animation in Angular 1.x using ngAnimate to an animation in Angular 2.
 ---
 
-Originally, Angular 1.x was created to help developers build enterprise applications faster. With the introduction of `ngAnimate`, Angular 1.x suddenly offered something for everyone. Not only could developers create powerful line of business applications, but designers could use Angular to create rich, immersive experiences. In this lesson, we are going to examine a CSS animation in Angular 1.x and then translate it to work in Angular 2.
+Originally, Angular 1.x was created to help developers build enterprise applications faster. With the introduction of `ngAnimate` written by [Matias Niemelä](http://www.yearofmoo.com/), Angular 1.x suddenly offered something for everyone. Not only could developers create powerful line of business applications, but designers could use Angular to create rich, immersive experiences. Matias took animations to the next level in Angular 2 by rewritting the entire API to give us complete control over ever facet over how our interfaces are animated.
+
+In this lesson, we are going to examine a CSS animation in Angular 1.x and then translate it to work in Angular 2. 
 
 ## Table of Contents
 
