@@ -5,7 +5,7 @@ title: Bootstrapping in the browser with Angular 2
 author: toddmotto
 path: 2016-07-06-bootstrapping-in-angular-2.md
 tags: bootstrapping
-version: 2.0.0-rc.6
+version: 2.0.2
 intro: In this guide you'll learn how to bootstrap an Angular 2 application.
 ---
 
