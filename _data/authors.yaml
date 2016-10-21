@@ -26,3 +26,10 @@ burkeholland:
   github: burkeholland
   gravatar: /img/authors/burke-holland.png
   bio: "Burke works for [Telerik](http://telerik.com) as a Developer Advocate focusing on Kendo UI. He enjoys working with and meeting developers who are building mobile apps with jQuery / HTML5 and loves to hack on social API's."
+juristr:
+  name: Juri Strumpflohner
+  twitter: juristr
+  web: http://juristr.com
+  github: juristr
+  gravatar: /img/authors/juristr.jpg
+  bio: "Juri is as a full-stack developer, architect and tech lead with a particular passion for frontend development, especially with Angular. He writes tech articles on [his personal blog](http://juristr.com/blog) and occasionally publishes tech video courses. Follow him on Twitter for more interesting stuff!"
