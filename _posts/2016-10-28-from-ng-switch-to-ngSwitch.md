@@ -3,7 +3,7 @@ layout: post
 permalink: /from-ng-switch-to-ngSwitch
 title: From ng-switch to ngSwitch
 author: toddmotto
-path: 2016-10-26-from-ng-switch-to-ngSwitch.md
+path: 2016-10-28-from-ng-switch-to-ngSwitch.md
 tags: directives
 version: 2.0.0
 intro: In this guide you'll learn how to use ngSwitch, the Angular 2 equivalent for ng-switch.
