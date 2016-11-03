@@ -3,7 +3,7 @@ layout: post
 permalink: /from-transclusion-to-content-projection
 title: From transclusion to content projection
 author: juristr
-path: 2016-11-01-from-transclusion-to-content-projection.md
+path: 2016-11-03-from-transclusion-to-content-projection.md
 tags: components
 version: 2.0.0
 intro: In this guide you will learn how to migrate from transclusion to content projection.
@@ -16,13 +16,13 @@ When you create more advanced components, the simple input and output mechanisms
 <div class="contents" markdown="1">
 
 - [Angular 1.x](#angular-1x)
-    - [Transclusion with `ngTransclude`](#transclusion-with-ngtransclude)
-    - [Multi-slot Transclusion](#multi-slot-transclusion)
-    - [Optional slots and fallbacks in multi-slot transclusion](#optional-slots-and-fallbacks-in-multi-slot-transclusion)
-    - [Manual transclusion](#manual-transclusion)
+  - [Transclusion with `ngTransclude`](#transclusion-with-ngtransclude)
+  - [Multi-slot Transclusion](#multi-slot-transclusion)
+  - [Optional slots and fallbacks in multi-slot transclusion](#optional-slots-and-fallbacks-in-multi-slot-transclusion)
+  - [Manual transclusion](#manual-transclusion)
 - [Angular 2](#angular-2)
-    - [Content Projection with `ng-content`](#content-projection-with-ng-content)
-    - [Multi-slot content projection](#multi-slot-content-projection)
+  - [Content Projection with `ng-content`](#content-projection-with-ng-content)
+  - [Multi-slot content projection](#multi-slot-content-projection)
 - [Final code](#final-code)
 
 </div>
@@ -36,6 +36,7 @@ We previously [learned about binding input properties to our components](/compon
 {% endhighlight %}
 
 While this perfectly works, we can definitely do better. What if we want to pass complete HTML parts into the body of our collapsible panel? Or even entire Angular directives.  
+
 In more complex situations it might not be enough to simply use attribute bindings to pass in data, but there's the need for more advanced mechanisms. For that purpose, Angular 1.x has a **concept called "transclusion"**.
 
 A "transcluded component" could be instantiated in our HTML template as follows.
@@ -75,6 +76,7 @@ const collapsiblePanelComponent = {
         <h3 class="panel-title">{{ $ctrl.title }}</h3>
       </div>
       <div class="panel-body" ng-if="$ctrl.visible" ng-transclude>
+        <!-- CONTENT TRANSCLUDED -->
       </div>
     </div>
   `,
@@ -89,7 +91,7 @@ angular
   .component('collapsiblePanel', collapsiblePanelComponent);
 {% endhighlight %}
 
-### Multi-slot Transclusion 
+### Multi-slot Transclusion
 
 What about transcluding to different destinations? Totally possible, and known as multi-slot or named slot transclusion. Like in our example before, we may want to inject the panel title just like the panel body by making use of transclusion.
 
@@ -123,11 +125,9 @@ This tells Angular to look for a span element, and transclude it into our `ng-tr
 {% highlight html %}
 <div class="panel">
   <div class="panel-heading" ng-click="$ctrl.visible = !$ctrl.visible">
-    <h3 class="panel-title" ng-transclude="titleSlot">
-    </h3>
+    <h3 class="panel-title" ng-transclude="titleSlot"></h3>
   </div>
-  <div class="panel-body" ng-if="$ctrl.visible" ng-transclude>
-  </div>
+  <div class="panel-body" ng-if="$ctrl.visible" ng-transclude></div>
 </div>
 {% endhighlight %}
 
@@ -155,8 +155,7 @@ const collapsiblePanelComponent = {
       <div class="panel-heading" ng-click="$ctrl.visible = !$ctrl.visible">
         <h3 class="panel-title" ng-transclude="titleSlot"></h3>
       </div>
-      <div class="panel-body" ng-if="$ctrl.visible" ng-transclude>
-      </div>
+      <div class="panel-body" ng-if="$ctrl.visible" ng-transclude></div>
     </div>
   `,
   controller() {
@@ -197,8 +196,7 @@ const collapsiblePanelComponent = {
           Click to expand/collapse
         </h3>
       </div>
-      <div class="panel-body" ng-if="$ctrl.visible" ng-transclude>
-      </div>
+      <div class="panel-body" ng-if="$ctrl.visible" ng-transclude></div>
     </div>
   `,
   ...
@@ -295,7 +293,7 @@ class CollapsiblePanelComponent {
 
 ### Multi-slot content projection
 
-Just as in Angular 1, we can use the same directive `ng-content` and use a `select` property on it to selectively choose the elements we want to get projected. The selector must be a valid `document.querySelector` expression. 
+Just as in Angular 1, we can use the same directive `ng-content` and use a `select` property on it to selectively choose the elements we want to get projected. The selector must be a valid `document.querySelector` expression.
 
 {% highlight javascript %}
 @Component({
