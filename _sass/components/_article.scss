@@ -32,3 +32,18 @@
     background: $c__light-grey;
   }
 }
+
+.banner {
+  margin: 0 -55PX;
+  padding: 30px 0;
+  background: #f1f2f1;
+  border-bottom: 30px solid #fff;
+  img {
+    width: 100%;
+  }
+  &--bottom {
+    margin-bottom: -55px;
+    padding: 30px 0 0;
+    border-bottom: 0;
+  }
+}
