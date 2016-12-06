@@ -4,7 +4,7 @@ permalink: /from-ng-model-to-ngModel
 title: From ng-model to ngModel
 author: simpulton
 path: 2016-12-06-from-ng-model-to-ngModel.md
-tags: directives
+tags: forms
 version: 2.0.0
 intro: In this guide you'll learn how to use ngModel, the Angular 2 equivalent for ng-model.
 ---
