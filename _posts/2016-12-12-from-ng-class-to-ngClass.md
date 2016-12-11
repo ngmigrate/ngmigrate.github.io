@@ -3,7 +3,7 @@ layout: post
 permalink: /from-ng-class-to-ngClass
 title: From ng-class to ngClass
 author: juristr
-path: 2016-10-28-from-ng-class-to-ngClass.md
+path: 2016-12-12-from-ng-class-to-ngClass.md
 tags: directives
 version: 2.0.0
 intro: In this guide you'll learn how to use ngClass, the Angular 2 equivalent for ng-class.
