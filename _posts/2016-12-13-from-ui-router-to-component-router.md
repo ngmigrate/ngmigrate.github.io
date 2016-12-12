@@ -3,7 +3,7 @@ layout: post
 permalink: /from-ui-router-to-component-router
 title: From ui-router to Component Router
 author: simpulton
-path: 2016-12-03-from-ui-router-to-component-router.md
+path: 2016-12-13-from-ui-router-to-component-router.md
 tags: routing
 version: 2.0.0
 intro: In this guide you'll learn how to use the component router, the Angular 2 equivalent for ui-router.
